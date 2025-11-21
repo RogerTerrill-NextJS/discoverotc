@@ -63,7 +63,10 @@ export const getNearbyPlaces = async (airport: Airport): Promise<PlaceRecommenda
     });
 
     // Extract grounding chunks if available
-    const chunks = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
+    const chunks = (response.candidates?.[0]?.groundingMetadata?.groundingChunks || []).map(chunk => ({
+      ...chunk,
+      web: chunk.web ? {uri: chunk.web.uri ?? "", title: chunk.web.title ?? ""} : undefined,
+    })) as unknown as PlaceRecommendation['chunks'];
 
     return {
       text: response.text || "No recommendations found.",
