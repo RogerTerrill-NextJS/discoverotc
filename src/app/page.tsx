@@ -85,11 +85,11 @@ const App: React.FC = () => {
               </svg>
             </div>
             <h1 className="text-xl font-bold tracking-tight text-slate-800">
-              Aero<span className="text-blue-600">Guide</span>
+              <span className="text-blue-600">Outside</span>the<span className="text-blue-600">Cockpit</span>
             </h1>
           </div>
           <div className="text-sm font-medium text-slate-500 hidden sm:block">
-            General Aviation Directory
+            Beyond The Runway
           </div>
         </div>
       </header>
