@@ -5,6 +5,7 @@ import {Airport} from '@/types';
 import {MOCK_AIRPORTS} from './constants';
 import {AirportCard} from '@/components/AirportCard';
 import {AirportDetail} from '@/components/AirportDetail';
+import {NewsletterSignup} from "@/components/Newsletter";
 
 // Simple View State Management
 type ViewState = 'LIST' | 'DETAIL';
@@ -173,6 +174,9 @@ const App: React.FC = () => {
           />
         )}
       </main>
+
+      {/* Newsletter Section */}
+      <NewsletterSignup/>
 
       {/* Footer */}
       <footer className="bg-white border-t border-slate-200 mt-auto py-8">
