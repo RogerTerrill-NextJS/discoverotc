@@ -24,32 +24,6 @@ export interface Airport {
   diagramUrl?: string;
 }
 
-export interface AIState<T> {
-  data: T | null;
-  loading: boolean;
-  error: string | null;
-}
-
-export interface WeatherData {
-  current: {
-    temp: number;
-    windSpeed: number;
-    weatherCode: number;
-    precipitation: number;
-  };
-  daily: {
-    date: string;
-    maxTemp: number;
-    minTemp: number;
-    weatherCode: number;
-  }[];
-}
-
-export interface PlaceRecommendation {
-  text: string;
-  chunks: GroundingChunk[];
-}
-
 export interface GroundingChunk {
   web?: {
     uri: string;
@@ -58,6 +32,6 @@ export interface GroundingChunk {
   maps?: {
     uri: string;
     title: string;
-    placeAnswerSources?: any[];
+    placeAnswerSources?: string[]; // Assuming it's an array of strings
   }
 }

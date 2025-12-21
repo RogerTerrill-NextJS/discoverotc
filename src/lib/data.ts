@@ -1,6 +1,5 @@
 import {AIRPORTS} from "@/data/airports";
 
-
 export function getAllAirports() {
   return AIRPORTS;
 }

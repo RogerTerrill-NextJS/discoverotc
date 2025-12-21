@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Search from "@/components/Search";
+import AirportGrid from "@/components/AirportGrid";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
           <Hero/>
           <Search/>
         </div>
-
+        <AirportGrid/>
       </div>
     </div>
   );
