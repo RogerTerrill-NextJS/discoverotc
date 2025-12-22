@@ -1,7 +1,23 @@
+'use client'
 import React from 'react';
 import {AIRPORTS} from "@/data/airports";
 
-const Search = () => {
+import {usePathname, useSearchParams, useRouter} from "next/navigation";
+
+const Search = ({term}: { term?: string }) => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const {replace} = useRouter();
+
+  function handleSearch(term: string) {
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set('term', term);
+    } else {
+      params.delete('term');
+    }
+    replace(`${pathname}?${params.toString()}`)
+  }
 
   return (
     <>
@@ -18,23 +34,23 @@ const Search = () => {
             type="text"
             placeholder="Search name, ICAO, or city..."
             className="block w-full pl-10 pr-3 py-3 border-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 rounded-xl"
-            value={"REPLACED BY SEARCH INPUT"}
-            // onChange={(e) => setSearchQuery(e.target.value)}
+            defaultValue={term}
+            onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
 
-        <div className="relative min-w-[140px]">
-          <select
-            className="block w-full pl-3 pr-10 py-3 text-base border-l border-slate-100 focus:outline-none focus:ring-0 sm:text-sm rounded-xl text-slate-700 bg-transparent"
-            value={"selectedState"}
-            // onChange={(e) => setSelectedState(e.target.value)}
-          >
-            <option value="ALL">All States</option>
-            {AIRPORTS.map(state => (
-              <option key={state.icao} value={state.icao}>{state.state}</option>
-            ))}
-          </select>
-        </div>
+        {/*<div className="relative min-w-[140px]">*/}
+        {/*  <select*/}
+        {/*    className="block w-full pl-3 pr-10 py-3 text-base border-l border-slate-100 focus:outline-none focus:ring-0 sm:text-sm rounded-xl text-slate-700 bg-transparent"*/}
+        {/*    value={"selectedState"}*/}
+        {/*    // onChange={(e) => handleSearch(e.target.value)}*/}
+        {/*  >*/}
+        {/*    <option value="ALL">All States</option>*/}
+        {/*    {AIRPORTS.map(state => (*/}
+        {/*      <option key={state.icao} value={state.icao}>{state.state}</option>*/}
+        {/*    ))}*/}
+        {/*  </select>*/}
+        {/*</div>*/}
       </div>
     </>
   );

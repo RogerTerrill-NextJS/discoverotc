@@ -1,15 +1,17 @@
 import React from 'react';
 import {Airport} from "@/data/types";
-import {getAllAirports} from "@/lib/data";
+import {getAllAirports, getFilteredAirports} from "@/lib/data";
+import Link from "next/link";
 
-const AirportGrid = async () => {
-  const airports = await getAllAirports()
+const AirportGrid = async ({term}: { term: string }) => {
+  const airports = await getAllAirports();
+  const filteredAirports = await getFilteredAirports(term);
   return (
     (airports.length > 0) ? (
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-        {airports.map((airport: Airport) => (
-          <div key={airport.icao}> {airport.name} </div>
+        {filteredAirports.map((airport: Airport) => (
+          <Link href={`/airports/${airport.icao}`} key={airport.icao}> {airport.name} {airport.city}</Link>
           // <AirportCard
           //   key={airport.icao}
           //   airport={airport}
