@@ -2,6 +2,7 @@ import React from 'react';
 import {Airport} from "@/data/types";
 import {getAllAirports, getFilteredAirports} from "@/lib/data";
 import Link from "next/link";
+import AirportCard from "@/components/AirportCard";
 
 const AirportGrid = async ({term}: { term: string }) => {
   const airports = await getAllAirports();
@@ -11,12 +12,10 @@ const AirportGrid = async ({term}: { term: string }) => {
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
         {filteredAirports.map((airport: Airport) => (
-          <Link href={`/airports/${airport.icao}`} key={airport.icao}> {airport.name} {airport.city}</Link>
-          // <AirportCard
-          //   key={airport.icao}
-          //   airport={airport}
-          //   onClick={handleAirportClick}
-          // />
+          <AirportCard
+            key={airport.icao}
+            airport={airport}
+          />
         ))}
       </div>
     ) : (

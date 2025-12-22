@@ -1,10 +1,8 @@
 'use client'
 import React from 'react';
-import {AIRPORTS} from "@/data/airports";
-
 import {usePathname, useSearchParams, useRouter} from "next/navigation";
 
-const Search = ({term}: { term?: string }) => {
+const Search = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const {replace} = useRouter();
@@ -34,7 +32,7 @@ const Search = ({term}: { term?: string }) => {
             type="text"
             placeholder="Search name, ICAO, or city..."
             className="block w-full pl-10 pr-3 py-3 border-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-0 rounded-xl"
-            defaultValue={term}
+            defaultValue={searchParams.get('term') ?? ''}
             onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
