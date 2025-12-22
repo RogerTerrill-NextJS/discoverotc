@@ -1,7 +1,6 @@
 import React from 'react';
 import {Airport} from "@/data/types";
 import {getAllAirports, getFilteredAirports} from "@/lib/data";
-import Link from "next/link";
 import AirportCard from "@/components/AirportCard";
 
 const AirportGrid = async ({term}: { term: string }) => {
