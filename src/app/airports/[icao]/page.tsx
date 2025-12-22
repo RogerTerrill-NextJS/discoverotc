@@ -42,10 +42,10 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                           d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
-                  {airport.city}, {airport.state} &bull; {airport.elevation}' MSL
+                  {airport.city}, {airport.state} &bull; {airport.elevation}&#39; MSL
                 </p>
               </div>
-              <DiagramButton/>
+              <DiagramButton airport={airport}/>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
         </div>
       </div>
 
-      <DiagramModal airport={airport}/>
+      <DiagramButton airport={airport}/>
     </div>
   );
 }

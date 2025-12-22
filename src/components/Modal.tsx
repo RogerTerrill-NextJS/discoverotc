@@ -8,7 +8,7 @@ interface ModalProps {
   title?: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({isOpen, onClose, children, title}) => {
+export const Modal = ({isOpen, onClose, children, title}: ModalProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

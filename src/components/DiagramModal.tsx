@@ -5,15 +5,15 @@ import {Airport} from "@/data/types";
 
 interface ModalProps {
   airport: Airport;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const DiagramModal = ({airport}: ModalProps) => {
-  const [isDiagramOpen, setIsDiagramOpen] = useState(false);
-
+const DiagramModal = ({airport, isOpen, onClose}: ModalProps) => {
   return (
     <Modal
-      isOpen={isDiagramOpen}
-      onClose={() => setIsDiagramOpen(false)}
+      isOpen={isOpen}
+      onClose={onClose}
       title={`Airport Diagram - ${airport.icao}`}
     >
       <div className="flex flex-col items-center justify-center min-h-[400px]">
