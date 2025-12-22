@@ -66,8 +66,6 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
           <LocalTime/>
         </div>
       </div>
-
-      <DiagramButton airport={airport}/>
     </div>
   );
 }
