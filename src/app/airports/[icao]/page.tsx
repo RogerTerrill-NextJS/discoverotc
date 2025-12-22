@@ -8,10 +8,8 @@ import Brief from "@/components/Brief";
 import Places from "@/components/Places";
 import LocalTime from "@/components/LocalTime";
 import HomeButton from "@/components/HomeButton";
-import {Modal} from "@/components/Modal";
-import DiagramModal from "@/components/DiagramModal";
-import DiagramButton from "@/components/DiagramButton";
 import AirportHeader from "@/components/AirportHeader";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default async function AirportDetails({params}: { params: Promise<{ icao: string }>; }) {
   const airport = getAirportByICAO((await params).icao);
@@ -20,6 +18,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-in fade-in duration-300">
+      <ScrollToTop/>
       <HomeButton/>
       <AirportHeader airport={airport}/>
 

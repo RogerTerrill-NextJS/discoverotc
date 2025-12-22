@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import Search from "@/components/Search";
 import AirportGrid from "@/components/AirportGrid";
-import Footer from "@/components/Footer";
 
 export default async function Home(props: {
   searchParams?: Promise<{
@@ -22,7 +21,6 @@ export default async function Home(props: {
           <AirportGrid term={term}/>
         </div>
       </main>
-      <Footer/>
     </div>
 
   );

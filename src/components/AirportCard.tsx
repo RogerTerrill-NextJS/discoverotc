@@ -6,6 +6,7 @@ const AirportCard = ({airport}: { airport: Airport }) => {
   return (
     <Link
       href={`/airports/${airport.icao}`}
+      scroll={true}
       className="group bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer flex flex-col"
     >
       <div className="h-32 bg-slate-100 relative overflow-hidden">
