@@ -1,6 +1,6 @@
 import React from 'react';
 import {getAirportByICAO} from "@/lib/data";
-import Link from "next/link";
+
 import Weather from "@/components/Weather";
 import Runways from "@/components/Runways";
 import Frequencies from "@/components/Frequencies";
@@ -8,6 +8,9 @@ import Brief from "@/components/Brief";
 import Places from "@/components/Places";
 import LocalTime from "@/components/LocalTime";
 import HomeButton from "@/components/HomeButton";
+import {Modal} from "@/components/Modal";
+import DiagramModal from "@/components/DiagramModal";
+import DiagramButton from "@/components/DiagramButton";
 
 export default async function AirportDetails({params}: { params: Promise<{ icao: string }>; }) {
   const airport = getAirportByICAO((await params).icao);
@@ -42,29 +45,20 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
                   {airport.city}, {airport.state} &bull; {airport.elevation}' MSL
                 </p>
               </div>
-              {/*<button*/}
-              {/*  onClick={() => setIsDiagramOpen(true)}*/}
-              {/*  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-blue-700 bg-white hover:bg-blue-50 transition-colors shadow-lg"*/}
-              {/*>*/}
-              {/*  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">*/}
-              {/*    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}*/}
-              {/*          d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>*/}
-              {/*  </svg>*/}
-              {/*  View Diagram*/}
-              {/*</button>*/}
+              <DiagramButton/>
             </div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Left Column: Info & Runways */}
+        {/* Left Column */}
         <div className="lg:col-span-2 space-y-8">
           <Brief/>
           <Places/>
         </div>
 
-        {/* Right Column: Frequencies & Quick Data */}
+        {/* Right Column */}
         <div className="space-y-8">
           <Weather airport={airport}/>
           <Runways airport={airport}/>
@@ -73,25 +67,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
         </div>
       </div>
 
-      {/* Modal for Airport Diagram */}
-      {/*<Modal*/}
-      {/*  isOpen={isDiagramOpen}*/}
-      {/*  onClose={() => setIsDiagramOpen(false)}*/}
-      {/*  title={`Airport Diagram - ${airport.icao}`}*/}
-      {/*>*/}
-      {/*  <div className="flex flex-col items-center justify-center min-h-[400px]">*/}
-      {/*    /!* Mocking a diagram by fetching a different grayscale technical looking image *!/*/}
-      {/*    <img*/}
-      {/*      src={`https://picsum.photos/seed/${airport.icao}diagram/800/800?grayscale`}*/}
-      {/*      alt="Airport Diagram Mock"*/}
-      {/*      className="max-w-full h-auto border border-slate-300 shadow-sm"*/}
-      {/*    />*/}
-      {/*    <p className="mt-4 text-sm text-slate-500 text-center">*/}
-      {/*      * This is a simulated diagram for demonstration purposes.<br/>*/}
-      {/*      In a production app, this would be a real FAA/Jeppesen SVG chart.*/}
-      {/*    </p>*/}
-      {/*  </div>*/}
-      {/*</Modal>*/}
+      <DiagramModal airport={airport}/>
     </div>
   );
 }
