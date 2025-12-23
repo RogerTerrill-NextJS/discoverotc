@@ -1,13 +1,12 @@
 import React from 'react';
+import {BoltIcon} from '@heroicons/react/24/outline';
 
 const Brief = () => {
   return (
     <section className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
       <div className="flex items-center mb-4">
         <div className="p-2 bg-purple-100 text-purple-600 rounded-lg mr-3">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z"/>
-          </svg>
+          <BoltIcon className="w-6 h-6"/>
         </div>
         <h3 className="text-xl font-semibold text-slate-800">AI Pilot Briefing</h3>
       </div>
