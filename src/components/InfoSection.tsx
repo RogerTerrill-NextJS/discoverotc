@@ -11,7 +11,6 @@ type InfoSectionProps = {
 export default function InfoSection({
                                       title,
                                       airport,
-                                      accentClass = "bg-purple-100 text-purple-600",
                                     }: InfoSectionProps) {
   const type = toCamelCase(title) as DescriptionType;
 
@@ -20,7 +19,7 @@ export default function InfoSection({
   return (
     <section className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
       <div className="flex items-center mb-4">
-        <IconComponent type={type} accentClass={accentClass}/>
+        <IconComponent type={type}/>
         <h3 className="text-xl font-semibold text-slate-800">
           {title}
         </h3>
