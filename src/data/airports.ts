@@ -2,23 +2,66 @@ import {Airport} from './types'
 
 export const AIRPORTS: Airport[] = [
   {
-    icao: "KOSH",
-    name: "Wittman Regional Airport",
-    city: "Oshkosh",
-    state: "WI",
-    elevation: 808,
-    latitude: 43.9844,
-    longitude: -88.5570,
+    icao: "KSNA",
+    name: "John Wayne Airport",
+    city: "Santa Ana",
+    state: "CA",
+    elevation: 56,
+    latitude: 33.6757,
+    longitude: -117.8682,
     runways: [
-      {id: "18/36", length: 8002, width: 150, surface: "Concrete"},
-      {id: "09/27", length: 6179, width: 150, surface: "Asphalt"},
+      {id: "02L/20R", length: 5701, width: 150, surface: "Concrete"},
+      {id: "02R/20L", length: 2886, width: 75, surface: "Asphalt"}
     ],
     frequencies: [
-      {type: "TOWER", mhz: "118.5"},
+      {type: "ATIS", mhz: "126.0"},
+      {type: "TOWER", mhz: "120.8"},
       {type: "GROUND", mhz: "121.9"},
-      {type: "ATIS", mhz: "125.9"}
-    ]
-  },
+      {type: "CLEARANCE", mhz: "118.0"}
+    ],
+    approaches: [
+      {
+        runway: "20R",
+        type: "ILS OR LOC",
+        name: "ILS or LOC RWY 20R"
+      },
+      {
+        runway: "20R",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 20R"
+      },
+      {
+        runway: "20L",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 20L"
+      },
+      {
+        runway: "02L",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 02L"
+      },
+      {
+        runway: "02R",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 02R"
+      },
+      {
+        runway: "20R",
+        type: "VOR",
+        name: "VOR RWY 20R"
+      }
+    ],
+    description: {
+      summary: "Join us for an exciting flight into one of Southern California's busiest airports! We're flying our Piper Arrow into John Wayne Airport (KSNA) during reverse operations—landing on Runway 02R with twice the challenge after executing not one, but TWO go-arounds due to heavy traffic. After finally touching down, we make our way over to the Flying Leatherneck Aviation Museum for an exclusive behind-the-scenes tour of their incredible restoration hangar, where history comes back to life. You won't want to miss this!\n" +
+        "\n" +
+        "TOYS FOR TOTS EVENT: https://allevents.in/irvine/toys-for-tots-toy-drive/200029192240844\n" +
+        "\n" +
+        "For more information on the Flying Leatherneck Aviation Museum check out their website: https://www.flyingleathernecks.org/\n" +
+        "\n" +
+        "Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit"
+    }
+  }
+  ,
   {
     icao: "KVNY",
     name: "Van Nuys Airport",

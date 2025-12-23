@@ -4,7 +4,7 @@ import {getAirportByICAO} from "@/lib/data";
 import Weather from "@/components/Weather";
 import Runways from "@/components/Runways";
 import Frequencies from "@/components/Frequencies";
-import Brief from "@/components/Brief";
+import Summary from "@/components/Summary";
 import Places from "@/components/Places";
 import LocalTime from "@/components/LocalTime";
 import HomeButton from "@/components/HomeButton";
@@ -25,7 +25,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-8">
-          <Brief/>
+          <Summary airport={airport}/>
           <Places/>
         </div>
 

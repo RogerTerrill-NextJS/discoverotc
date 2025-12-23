@@ -10,6 +10,12 @@ export interface Frequency {
   mhz: string;
 }
 
+export interface Approach {
+  runway: string;
+  type: string;
+  name: string;
+}
+
 export interface Airport {
   icao: string;
   name: string;
@@ -22,6 +28,10 @@ export interface Airport {
   frequencies: Frequency[];
   imageUrl?: string;
   diagramUrl?: string;
+  approaches?: Approach[];
+  description?: {
+    summary: string;
+  }
 }
 
 export interface AIState<T> {

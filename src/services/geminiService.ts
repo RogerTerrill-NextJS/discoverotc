@@ -1,9 +1,9 @@
 // import {GoogleGenAI} from "@google/genai";
-// import {Airport, PlaceRecommendation} from "@/types";
+// import {Airport, PlaceRecommendation} from "@/data/types";
 //
 // // Helper to validate API Key
 // const getApiKey = (): string => {
-//   const apiKey = process.env.API_KEY;
+//   const apiKey = "AIzaSyCsWb8gSFkIXq-Am3qloTdIdDwoKnWORnM";
 //   if (!apiKey) {
 //     console.error("API_KEY is missing in environment variables.");
 //     return "";
