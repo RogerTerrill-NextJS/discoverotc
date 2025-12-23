@@ -27,14 +27,17 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
           <InfoSection title="Summary" airport={airport}></InfoSection>
           <InfoSection title="Transient Parking" airport={airport}></InfoSection>
           <InfoSection title="FBO" airport={airport}></InfoSection>
+          <InfoSection title="Museum" airport={airport}></InfoSection>
+          <InfoSection title="Terminal Building" airport={airport}></InfoSection>
+
           {/*<Places/>*/}
         </div>
 
         {/* Right Column */}
         <div className="space-y-8">
           <Weather airport={airport}/>
-          <Runways airport={airport}/>
           <Frequencies airport={airport}/>
+          <Runways airport={airport}/>
           <LocalTime/>
         </div>
       </div>

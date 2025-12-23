@@ -13,7 +13,7 @@ const Header = () => {
             </svg>
           </div>
           <h1 className="text-xl font-bold tracking-tight text-slate-800">
-            <span className="text-blue-600">Outside</span>the<span className="text-blue-600">Cockpit</span>
+            <span className="text-blue-600">Outside The Cockpit</span>
           </h1>
         </Link>
         <div className="text-sm font-medium text-slate-500 hidden sm:block">
