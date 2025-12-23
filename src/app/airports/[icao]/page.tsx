@@ -4,12 +4,11 @@ import {getAirportByICAO} from "@/lib/data";
 import Weather from "@/components/Weather";
 import Runways from "@/components/Runways";
 import Frequencies from "@/components/Frequencies";
-import Summary from "@/components/Summary";
-import Places from "@/components/Places";
 import LocalTime from "@/components/LocalTime";
 import HomeButton from "@/components/HomeButton";
 import AirportHeader from "@/components/AirportHeader";
 import ScrollToTop from "@/components/ScrollToTop";
+import InfoSection from "@/components/InfoSection";
 
 export default async function AirportDetails({params}: { params: Promise<{ icao: string }>; }) {
   const airport = getAirportByICAO((await params).icao);
@@ -25,8 +24,10 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-8">
-          <Summary airport={airport}/>
-          <Places/>
+          <InfoSection title="Summary" airport={airport}></InfoSection>
+          <InfoSection title="Transient Parking" airport={airport}></InfoSection>
+          <InfoSection title="FBO" airport={airport}></InfoSection>
+          {/*<Places/>*/}
         </div>
 
         {/* Right Column */}

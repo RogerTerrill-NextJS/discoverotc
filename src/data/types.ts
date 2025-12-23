@@ -16,6 +16,18 @@ export interface Approach {
   name: string;
 }
 
+export type DescriptionType =
+  'summary'
+  | 'transientParking'
+  | 'fuel'
+  | 'restrooms'
+  | 'transportation'
+  | 'food'
+  | 'fbo'
+  | 'terminalBuilding'
+  | 'campground'
+  | 'museum';
+
 export interface Airport {
   icao: string;
   name: string;
@@ -31,6 +43,15 @@ export interface Airport {
   approaches?: Approach[];
   description?: {
     summary: string;
+    transientParking?: string;
+    museum?: string;
+    fbo?: string;
+    terminalBuilding?: string;
+    campground?: string;
+    food?: string;
+    fuel?: string;
+    transportation?: string;
+    restrooms?: string;
   }
 }
 
