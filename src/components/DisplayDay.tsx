@@ -3,6 +3,8 @@ import {Airport} from "@/data/types";
 import {CalendarIcon} from "@heroicons/react/24/outline";
 
 const DisplayDay = async ({airport}: { airport: Airport }) => {
+  if (!airport.displayDay) return null;
+
   return (
     <section className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
       <div className="p-4 bg-green-500 text-white">
