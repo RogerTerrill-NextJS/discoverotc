@@ -8,6 +8,28 @@ type InfoSectionProps = {
   accentClass?: string;
 };
 
+function linkify(text: string) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+  return text.split(urlRegex).map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline hover:text-blue-800"
+        >
+          {part}
+        </a>
+      );
+    }
+
+    return part;
+  });
+}
+
 export default function InfoSection({
                                       title,
                                       airport,
@@ -26,7 +48,7 @@ export default function InfoSection({
       </div>
 
       <div className="prose prose-slate text-slate-600 max-w-none leading-relaxed whitespace-pre-line">
-        {airport?.description?.[type] || "No information available."}
+        {linkify(airport?.description?.[type])} || {"No information available."}
       </div>
     </section>
   );
