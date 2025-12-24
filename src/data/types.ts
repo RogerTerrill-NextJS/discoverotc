@@ -40,6 +40,7 @@ export interface Airport {
   frequencies: Frequency[];
   imageUrl?: string;
   diagramUrl?: string;
+  displayDay?: string;
   approaches?: Approach[];
   description?: {
     summary: string;

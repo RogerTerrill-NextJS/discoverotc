@@ -19,6 +19,7 @@ export const AIRPORTS: Airport[] = [
       {type: "GROUND", mhz: "121.9"},
       {type: "CLEARANCE", mhz: "118.0"}
     ],
+    displayDay: "2nd Sunday of the Month",
     approaches: [
       {
         runway: "20R",

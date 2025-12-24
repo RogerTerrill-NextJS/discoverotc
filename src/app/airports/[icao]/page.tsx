@@ -9,6 +9,7 @@ import HomeButton from "@/components/HomeButton";
 import AirportHeader from "@/components/AirportHeader";
 import ScrollToTop from "@/components/ScrollToTop";
 import InfoSection from "@/components/InfoSection";
+import DisplayDay from "@/components/DisplayDay";
 
 export default async function AirportDetails({params}: { params: Promise<{ icao: string }>; }) {
   const airport = getAirportByICAO((await params).icao);
@@ -35,6 +36,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
 
         {/* Right Column */}
         <div className="space-y-8">
+          <DisplayDay airport={airport}/>
           <Weather airport={airport}/>
           <Frequencies airport={airport}/>
           <Runways airport={airport}/>
