@@ -1,6 +1,7 @@
 import React from 'react';
 import {Airport} from "@/data/types";
 import Link from "next/link";
+import Image from 'next/image';
 
 const AirportCard = ({airport}: { airport: Airport }) => {
   return (
@@ -11,9 +12,11 @@ const AirportCard = ({airport}: { airport: Airport }) => {
     >
       <div className="h-32 bg-slate-100 relative overflow-hidden">
         {/* Placeholder image using picsum with a deterministic seed based on ICAO */}
-        <img
-          src={`https://picsum.photos/seed/${airport.icao}/400/200`}
+        <Image
+          src={`/airport/${airport.icao}.jpg`}
           alt={`${airport.name} view`}
+          width={1200}
+          height={400}
           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"/>

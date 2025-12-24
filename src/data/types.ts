@@ -26,7 +26,8 @@ export type DescriptionType =
   | 'fbo'
   | 'terminalBuilding'
   | 'campground'
-  | 'museum';
+  | 'museum'
+  | 'additionalInfo';
 
 export interface Airport {
   icao: string;
@@ -53,6 +54,7 @@ export interface Airport {
     fuel?: string;
     transportation?: string;
     restrooms?: string;
+    additionalInfo?: string;
   }
 }
 

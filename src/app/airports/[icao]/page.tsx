@@ -34,6 +34,7 @@ export default async function AirportDetails({params}: { params: Promise<{ icao:
           <InfoSection title="Terminal Building" airport={airport}></InfoSection>
           <InfoSection title="Campground" airport={airport}></InfoSection>
           <InfoSection title="Museum" airport={airport}></InfoSection>
+          <InfoSection title="Additional Info" airport={airport}></InfoSection>
 
           {/*<Places/>*/}
         </div>

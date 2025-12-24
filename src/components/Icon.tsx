@@ -10,6 +10,7 @@ import {
   HomeIcon,
   MapIcon,
   NewspaperIcon,
+  PencilSquareIcon,
   TruckIcon,
   WalletIcon
 } from "@heroicons/react/24/outline";
@@ -26,6 +27,7 @@ const ICONS: Record<DescriptionType, React.ComponentType<{ className?: string }>
   terminalBuilding: BuildingOffice2Icon,
   transientParking: MapIcon,
   transportation: TruckIcon,
+  additionalInfo: PencilSquareIcon,
 };
 
 type IconComponentProps = {
@@ -45,6 +47,7 @@ const ACCENT_CLASSES = {
   transientParking: "bg-green-100 text-green-600",
   transit: "bg-yellow-100 text-yellow-600",
   transportation: "bg-sky-100 text-sky-600",
+  additionalInfo: "bg-gray-100 text-gray-600",
 
 }
 
