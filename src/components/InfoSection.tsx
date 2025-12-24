@@ -48,7 +48,7 @@ export default function InfoSection({
       </div>
 
       <div className="prose prose-slate text-slate-600 max-w-none leading-relaxed whitespace-pre-line">
-        {linkify(airport?.description?.[type])} || {"No information available."}
+        {linkify(airport?.description?.[type])}
       </div>
     </section>
   );

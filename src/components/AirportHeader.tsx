@@ -1,14 +1,17 @@
 import React from 'react';
 import DiagramButton from "@/components/DiagramButton";
 import {Airport} from "@/data/types";
+import Image from 'next/image'
 
 const AirportHeader = ({airport}: { airport: Airport }) => {
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8">
       <div className="h-48 sm:h-64 bg-slate-800 relative">
-        <img
-          src={`https://picsum.photos/seed/${airport.icao}/1200/400`}
+        <Image
+          src={`/airport/${airport.icao}.jpg`}
           alt="Airport Aerial"
+          width={1200}
+          height={400}
           className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"/>

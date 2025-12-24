@@ -59,10 +59,12 @@ export const AIRPORTS: Airport[] = [
         "For more information on the Flying Leatherneck Aviation Museum check out their website: https://www.flyingleathernecks.org/\n" +
         "\n" +
         "Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit",
+      fuel: "Fuel is available at ACI Jets North, ACI Jets South and Clay Lacy Aviation. Prices are competitive with other airports in the area.",
+      restrooms: "Restrooms are located in the FBOs and main commercial terminal.",
       transientParking: "You won’t find any transient parking at John Wayne Airport. You have a choice of three FBOs: ACI Jets North, ACI Jets South and Clay Lacy Aviation.",
+      transportation: "ACI Jets (North and South) and Clay Lacy Aviation provide crew cars with limits. Crew cars are typically on a first come basis, call ahead to verify availability. Rental car reservations can be coordinated through your FBO of choice. Rideshare is another good option for getting around Jonh Wayne Airport.",
       fbo: "There are three FBOs at John Wayne Airport: ACI Jets North, ACI Jets South and Clay Lacy Aviation. As of 2025 Clay Lacy is currently undergoing an expansion but is still open for business. We will provide a review of Clay Lacy Aviation once the renovation is complete.  On this trip to John Wayne we visited ACI Jets North. ACI Jets North customer service was friendly and helpful. There are two crew cars available with a 2 hour limit. Hang out in the Pilots Lounge upstairs for a quieter, more private experience. The pilots Lounge has a dedicated bathroom with shower. You’ll find ice cream treats in the freezer. ACI Jets does not charge fees for stays under 3 hours. We overstayed our visit and were charged a $95 ramp fee. So be sure to stick the 3 hour limit!",
-      museum: "This is for a museum",
-      terminalBuilding: "This is for a terminal building"
+      food: "You won’t find any food options on field. There are food options in the terminal accessible through the OC Air Pass. If you take the crew car there are plenty of food options within a 5 minute drive of the airport."
     }
   }
   ,
