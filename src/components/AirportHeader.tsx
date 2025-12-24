@@ -2,6 +2,7 @@ import React from 'react';
 import DiagramButton from "@/components/DiagramButton";
 import {Airport} from "@/data/types";
 import Image from 'next/image'
+import VideoButton from "@/components/VideoButton";
 
 const AirportHeader = ({airport}: { airport: Airport }) => {
   return (
@@ -30,7 +31,10 @@ const AirportHeader = ({airport}: { airport: Airport }) => {
                 {airport.city}, {airport.state} &bull; {airport.elevation}&#39; MSL
               </p>
             </div>
-            <DiagramButton airport={airport}/>
+            <div className="flex items-center gap-2 flex-col">
+              <VideoButton airport={airport}/>
+              {/*<DiagramButton airport={airport}/>*/}
+            </div>
           </div>
         </div>
       </div>
