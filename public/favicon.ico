@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Runway edges -->
+  <path d="M16 56 L28 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+  <path d="M48 56 L36 8" stroke="currentColor" stroke-width="4" stroke-linecap="round"></path>
+
+  <!-- Centerline -->
+  <line x1="32" y1="56" x2="32" y2="8" stroke="currentColor" stroke-width="3" stroke-dasharray="6 6" stroke-linecap="round"></line>
+</svg>
