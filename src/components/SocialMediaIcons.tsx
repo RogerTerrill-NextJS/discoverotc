@@ -38,13 +38,13 @@ const SocialMediaIcons = ({ social }: { social: string }) => {
       href={icon.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="hover:text-slate-700 transition-colors"
+      className="hover:text-slate-700 transition-colors "
     >
       <img
         src={icon.src}
         alt={icon.alt}
         title={icon.alt}
-        className="w-7 h-7 inline-block rounded-md mr-2"
+        className="w-7 h-7 inline-block rounded-md mr-2 hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer"
       />
     </a>
   );
