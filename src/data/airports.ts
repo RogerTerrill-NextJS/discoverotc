@@ -2,6 +2,74 @@ import {Airport} from './types'
 
 export const AIRPORTS: Airport[] = [
   {
+    icao: "KUDD",
+    name: "Bermuda Dunes Airport",
+    city: "Bermuda Dunes",
+    state: "CA",
+    elevation: 73,
+    latitude: 33.7484,
+    longitude: -116.2748,
+    runways: [
+      {id: "10/28", length: 5002, width: 70, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "CTAF/UNICOM", mhz: "122.8"},
+      {type: "APP/DEP", mhz: "135.275"}
+    ],
+    approaches: [
+      {
+        runway: "10",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 10"
+      },
+      {
+        runway: "28",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 28"
+      },
+      {
+        runway: "CIRCLING",
+        type: "VOR",
+        name: "VOR-C"
+      }
+    ]
+  },
+  {
+    icao: "KHII",
+    name: "Lake Havasu City Airport",
+    city: "Lake Havasu City",
+    state: "AZ",
+    elevation: 783,
+    latitude: 34.5711,
+    longitude: -114.3583,
+    runways: [
+      {id: "14/32", length: 8000, width: 100, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "ATIS", mhz: "120.575"},
+      {type: "TOWER", mhz: "118.3"},
+      {type: "GROUND", mhz: "121.7"},
+      {type: "CLEARANCE", mhz: "125.8"}
+    ],
+    approaches: [
+      {
+        runway: "14",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 14"
+      },
+      {
+        runway: "32",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 32"
+      },
+      {
+        runway: "CIRCLING",
+        type: "VOR",
+        name: "VOR-A"
+      }
+    ]
+  },
+  {
     icao: "KSNA",
     name: "John Wayne Airport",
     city: "Santa Ana",
@@ -68,6 +136,245 @@ export const AIRPORTS: Airport[] = [
     }
   },
   {
+    icao: "KMER",
+    name: "Castle Airport",
+    city: "Atwater",
+    state: "CA",
+    elevation: 191,
+    latitude: 37.3805,
+    longitude: -120.5682,
+    runways: [
+      {id: "13/31", length: 11702, width: 150, surface: "Concrete"}
+    ],
+    frequencies: [
+      {type: "CTAF/UNICOM", mhz: "122.7"},
+      {type: "ATIS", mhz: "120.05"},
+      {type: "APP/DEP", mhz: "120.45"}
+    ],
+    approaches: [
+      {
+        runway: "13",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 13"
+      },
+      {
+        runway: "31",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 31"
+      },
+      {
+        runway: "CIRCLING",
+        type: "VOR",
+        name: "VOR-A"
+      }
+    ]
+  },
+  {
+    icao: "KCRQ",
+    name: "McClellan-Palomar Airport",
+    city: "Carlsbad",
+    state: "CA",
+    elevation: 331,
+    latitude: 33.1283,
+    longitude: -117.2795,
+    runways: [
+      {id: "06/24", length: 4897, width: 150, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "ATIS", mhz: "118.15"},
+      {type: "TOWER", mhz: "118.6"},
+      {type: "GROUND", mhz: "121.7"},
+      {type: "CLEARANCE", mhz: "120.25"}
+    ],
+    approaches: [
+      {
+        runway: "24",
+        type: "ILS OR LOC",
+        name: "ILS or LOC RWY 24"
+      },
+      {
+        runway: "24",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 24"
+      },
+      {
+        runway: "06",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 06"
+      },
+      {
+        runway: "CIRCLING",
+        type: "VOR",
+        name: "VOR-A"
+      }
+    ]
+  },
+  {
+    icao: "O22",
+    name: "Columbia Airport",
+    city: "Columbia",
+    state: "CA",
+    elevation: 2121,
+    latitude: 38.0304167,
+    longitude: -120.4145556,
+    runways: [
+      {id: "17/35", length: 4673, width: 75, surface: "Asphalt"},
+      {id: "11/29", length: 2607, width: 50, surface: "Turf"}
+    ],
+    frequencies: [
+      {type: "CTAF/UNICOM", mhz: "122.975"},
+      {type: "AWOS‑3", mhz: "124.65"},
+      {type: "NORCAL APPROACH/DEPARTURE", mhz: "125.1"}
+    ],
+    approaches: [
+      {
+        runway: "35",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 35"
+      }
+    ]
+  },
+  {
+    icao: "KAPV",
+    name: "Apple Valley Airport",
+    city: "Apple Valley",
+    state: "CA",
+    elevation: 3062,
+    latitude: 34.5753,
+    longitude: -117.1862,
+    runways: [
+      {id: "18/36", length: 6498, width: 150, surface: "Asphalt"},
+      {id: "08/26", length: 4100, width: 60, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "CTAF/UNICOM", mhz: "122.80"},
+      {type: "APPROACH/DEPARTURE", mhz: "124.55"}
+    ],
+    approaches: [
+      {
+        runway: "18",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 18"
+      }
+    ]
+  },
+  {
+    icao: "KRNM",
+    name: "Ramona Airport",
+    city: "Ramona",
+    state: "CA",
+    elevation: 1395,
+    latitude: 33.0392,
+    longitude: -116.9150,
+    displayDay: "3rd Sunday of the Month",
+    runways: [
+      {id: "09/27", length: 5006, width: 150, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "TOWER", mhz: "119.87"},
+      {type: "APPROACH", mhz: "132.20"},
+      {type: "DEPARTURE", mhz: "127.30"},
+      {type: "ATIS", mhz: "132.02"},
+      {type: "UNICOM", mhz: "122.95"},
+      {type: "GROUND", mhz: "121.65"}
+    ],
+    approaches: [
+      {runway: "09", type: "RNAV (GPS)", name: "RNAV (GPS) RWY 09"},
+      {runway: "27", type: "RNAV (GPS)", name: "RNAV (GPS) RWY 27"}
+    ],
+    description: {
+      summary: "Few airports surprise us like Ramona (KRNM)! Nestled in the hills of San Diego County, this unassuming field has a wild past — from WWII bombing practice and drag racing to becoming Cal Fire’s oldest Air Attack Base and home to one of two rotorcraft museums in the U.S.\n" +
+        "\n" +
+        "Fly with us in our Piper Arrow as we land on Runway 27, explore the Classic Rotors Museum, and get a surprise tower tour.\n" +
+        "\n" +
+        "Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit",
+      transientParking: "Transient parking is located at the base of tower. As of August 2025 Cal Fire also has their planes parked here while their ramp is being renovated. Stay clear of the Cal Fire planes and use the spots to the north of tower. Chain tie downs are available at most spots.",
+      fuel: "Self-serve fuel is located on the north side of the runway near approach end of runway 27. Avgas was $5.99/gal during our October 2025 visit. Full service fuel is also available through Pacific Executive Aviation.",
+      restrooms: "There is a port-a-pottie located in transient parking. Pacific Executive Aviation also have restrooms available. You’ll also find restrooms located inside the museum (when open).",
+      transportation: "There are no crew cars or car rentals available here. Rideshare can be tricky and expensive when available. There are no food options within walking distance. A car is required to get off field and find food.",
+      food: "There isn’t a café currently on field and you’ll need to secure a car or rideshare to find options away from the airport.",
+      museum: "Ramona Airport has one of two dedicated rotorcraft museums in the United States; The Classics Rotor Museum. The museum is filled with rare and vintage rotorcraft and has an incredible team of dedicated volunteers who have flown and personally worked on the aircraft found at this museum. It’s an impressive collection that every aviation enthusiast must see. Admission is free and the museum is open Tuesdays & Friday 10am-4pm and Saturdays 10am-6pm.",
+      additionalInfo: "Ramona Airport is home to a joint Cal Fire – U.S. Forest Service Air Tanker Base. Cal Fire currently has an OV-10 Bronco and (2) S2T Grumman Tankers here. The U.S. Forest Service has one UH-1 Huey at this location. All firefighting aircraft are in transient parking while the Cal Fire base gets a few upgrades. It’s a great way to see these amazing machines up close."
+
+    }
+  },
+  {
+    icao: "KSZP",
+    name: "Santa Paula Airport",
+    city: "Santa Paula",
+    state: "CA",
+    elevation: 250,
+    latitude: 34.3470,
+    longitude: -119.0616,
+    runways: [
+      {id: "04/22", length: 2665, width: 60, surface: "Asphalt"},
+      {id: "H1", length: 60, width: 60, surface: "Asphalt"}
+    ],
+    frequencies: [
+      {type: "CTAF/UNICOM", mhz: "122.90"}
+    ],
+    approaches: [
+      {
+        runway: "—",
+        type: "NONE",
+        name: "No published instrument approaches"
+      }
+    ]
+  },
+  {
+    icao: "KSBD",
+    name: "San Bernardino International Airport",
+    city: "San Bernardino",
+    state: "CA",
+    elevation: 1159,
+    latitude: 34.0954,
+    longitude: -117.2350,
+    runways: [
+      {id: "06/24", length: 10000, width: 200, surface: "Concrete"}
+    ],
+    frequencies: [
+      {type: "ATIS", mhz: "124.175"},
+      {type: "TOWER", mhz: "119.45"},
+      {type: "GROUND", mhz: "121.8"},
+      {type: "CTAF/UNICOM", mhz: "122.975"},
+      {type: "APPROACH/DEPARTURE", mhz: "127.0"},
+      {type: "APPROACH/DEPARTURE", mhz: "134.0"},
+      {type: "APPROACH/DEPARTURE", mhz: "135.4"}
+    ],
+    approaches: [
+      {
+        runway: "06",
+        type: "ILS OR LOC",
+        name: "ILS or LOC RWY 06"
+      },
+      {
+        runway: "06",
+        type: "LOC",
+        name: "LOC Y RWY 06"
+      },
+      {
+        runway: "06",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) Y RWY 06"
+      },
+      {
+        runway: "06",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) Z RWY 06"
+      },
+      {
+        runway: "06",
+        type: "RNAV (RNP)",
+        name: "RNAV (RNP) X RWY 06"
+      },
+      {
+        runway: "24",
+        type: "RNAV (RNP)",
+        name: "RNAV (RNP) RWY 24"
+      }
+    ]
+  },
+  {
     icao: "KVNY",
     name: "Van Nuys Airport",
     city: "Van Nuys",
@@ -129,46 +436,6 @@ export const AIRPORTS: Airport[] = [
       additionalInfo: "Check the Van Nuys Airport Calendar for runway closure dates: https://www.iflyvny.com/pilot-information/pilot-info\n" +
         "\n" +
         "And don't forget to study the noise abatement procedures (Departure Techniques section) before going: https://www.iflyvny.com/pilot-information/noise-restrictions"
-    }
-  },
-  {
-    icao: "KRNM",
-    name: "Ramona Airport",
-    city: "Ramona",
-    state: "CA",
-    elevation: 1395,
-    latitude: 33.0392,
-    longitude: -116.9150,
-    displayDay: "3rd Sunday of the Month",
-    runways: [
-      {id: "09/27", length: 5006, width: 150, surface: "Asphalt"}
-    ],
-    frequencies: [
-      {type: "TOWER", mhz: "119.87"},
-      {type: "APPROACH", mhz: "132.20"},
-      {type: "DEPARTURE", mhz: "127.30"},
-      {type: "ATIS", mhz: "132.02"},
-      {type: "UNICOM", mhz: "122.95"},
-      {type: "GROUND", mhz: "121.65"}
-    ],
-    approaches: [
-      {runway: "09", type: "RNAV (GPS)", name: "RNAV (GPS) RWY 09"},
-      {runway: "27", type: "RNAV (GPS)", name: "RNAV (GPS) RWY 27"}
-    ],
-    description: {
-      summary: "Few airports surprise us like Ramona (KRNM)! Nestled in the hills of San Diego County, this unassuming field has a wild past — from WWII bombing practice and drag racing to becoming Cal Fire’s oldest Air Attack Base and home to one of two rotorcraft museums in the U.S.\n" +
-        "\n" +
-        "Fly with us in our Piper Arrow as we land on Runway 27, explore the Classic Rotors Museum, and get a surprise tower tour.\n" +
-        "\n" +
-        "Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit",
-      transientParking: "Transient parking is located at the base of tower. As of August 2025 Cal Fire also has their planes parked here while their ramp is being renovated. Stay clear of the Cal Fire planes and use the spots to the north of tower. Chain tie downs are available at most spots.",
-      fuel: "Self-serve fuel is located on the north side of the runway near approach end of runway 27. Avgas was $5.99/gal during our October 2025 visit. Full service fuel is also available through Pacific Executive Aviation.",
-      restrooms: "There is a port-a-pottie located in transient parking. Pacific Executive Aviation also have restrooms available. You’ll also find restrooms located inside the museum (when open).",
-      transportation: "There are no crew cars or car rentals available here. Rideshare can be tricky and expensive when available. There are no food options within walking distance. A car is required to get off field and find food.",
-      food: "There isn’t a café currently on field and you’ll need to secure a car or rideshare to find options away from the airport.",
-      museum: "Ramona Airport has one of two dedicated rotorcraft museums in the United States; The Classics Rotor Museum. The museum is filled with rare and vintage rotorcraft and has an incredible team of dedicated volunteers who have flown and personally worked on the aircraft found at this museum. It’s an impressive collection that every aviation enthusiast must see. Admission is free and the museum is open Tuesdays & Friday 10am-4pm and Saturdays 10am-6pm.",
-      additionalInfo: "Ramona Airport is home to a joint Cal Fire – U.S. Forest Service Air Tanker Base. Cal Fire currently has an OV-10 Bronco and (2) S2T Grumman Tankers here. The U.S. Forest Service has one UH-1 Huey at this location. All firefighting aircraft are in transient parking while the Cal Fire base gets a few upgrades. It’s a great way to see these amazing machines up close."
-
     }
   },
 ];
