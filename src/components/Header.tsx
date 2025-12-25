@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import SocialMediaIcons from "@/components/SocialMediaIcons";
 
 const Header = () => {
   return (
@@ -17,7 +18,9 @@ const Header = () => {
           </h1>
         </Link>
         <div className="text-sm font-medium text-slate-500 hidden sm:block">
-          Go Fly, Go Discover
+          <SocialMediaIcons social="youtube"/>
+          <SocialMediaIcons social="instagram"/>
+          <SocialMediaIcons social="email"/>
         </div>
       </div>
     </header>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Email" viewBox="0 0 512 512">
+    <path fill="#00f" d="M0 0h512v512H0" style="fill:#06a8f4" />
+    <rect width="356" height="256" x="78" y="128" fill="#fff" rx="8%" />
+    <path fill="none" stroke="#00f" stroke-width="20"
+        d="m305 256 129 128M207 256 78 384m0-256 165 164c7 8 19 8 26 0l165-164" style="stroke:#03a9f4" />
+</svg>
