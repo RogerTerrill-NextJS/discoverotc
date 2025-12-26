@@ -49,6 +49,7 @@ export interface Airport {
   diagramUrl?: string;
   displayDay?: string;
   approaches?: Approach[];
+  youtube?: youtubeLink[];
   description?: {
     summary: string;
     transientParking?: string;
@@ -61,7 +62,6 @@ export interface Airport {
     transportation?: string;
     restrooms?: string;
     additionalInfo?: string;
-    youtube?: youtubeLink[];
   };
 }
 

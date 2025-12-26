@@ -2,7 +2,7 @@ import React from "react";
 import { Airport } from "@/data/types";
 
 const PreviousVideos = ({ airport }: { airport: Airport }) => {
-  const links = airport.description?.youtube?.slice(1);
+  const links = airport?.youtube?.slice(1);
   if (!links) return null;
 
   return (

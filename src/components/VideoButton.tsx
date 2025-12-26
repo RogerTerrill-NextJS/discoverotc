@@ -3,12 +3,12 @@ import { Airport } from "@/data/types";
 import { VideoCameraIcon } from "@heroicons/react/24/outline";
 
 const VideoButton = ({ airport }: { airport: Airport }) => {
-  if (!airport?.description?.youtube) return null;
+  if (!airport?.youtube) return null;
 
   return (
     <>
       <a
-        href={airport.description.youtube[0].url}
+        href={airport.youtube[0].url}
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-rose-700 hover:bg-rose-400 transition-colors shadow-lg"
