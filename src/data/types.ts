@@ -16,18 +16,24 @@ export interface Approach {
   name: string;
 }
 
+export interface youtubeLink {
+  title: string;
+  url: string;
+  date: string;
+}
+
 export type DescriptionType =
-  'summary'
-  | 'transientParking'
-  | 'fuel'
-  | 'restrooms'
-  | 'transportation'
-  | 'food'
-  | 'fbo'
-  | 'terminalBuilding'
-  | 'campground'
-  | 'museum'
-  | 'additionalInfo';
+  | "summary"
+  | "transientParking"
+  | "fuel"
+  | "restrooms"
+  | "transportation"
+  | "food"
+  | "fbo"
+  | "terminalBuilding"
+  | "campground"
+  | "museum"
+  | "additionalInfo";
 
 export interface Airport {
   icao: string;
@@ -55,7 +61,8 @@ export interface Airport {
     transportation?: string;
     restrooms?: string;
     additionalInfo?: string;
-  }
+    youtube?: youtubeLink[];
+  };
 }
 
 export interface AIState<T> {
@@ -93,5 +100,5 @@ export interface GroundingChunk {
     uri: string;
     title: string;
     placeAnswerSources?: any[];
-  }
+  };
 }
