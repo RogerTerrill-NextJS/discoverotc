@@ -537,6 +537,7 @@ export const AIRPORTS: Airport[] = [
     elevation: 250,
     latitude: 34.347,
     longitude: -119.0616,
+    displayDay: "1st Sunday of the Month",
     youtube: [
       {
         title:
