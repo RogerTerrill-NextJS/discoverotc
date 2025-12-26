@@ -36,7 +36,7 @@ export const AIRPORTS: Airport[] = [
         title:
           "Bermuda Dunes Airport (KUDD) | THIS is Why Bermuda Dunes Really is A Desert Oasis",
         url: "https://youtu.be/mCoTYR4JPhk",
-        date: "12.19.2025",
+        date: "12/19/2025",
       },
     ],
     description: {
@@ -102,6 +102,14 @@ export const AIRPORTS: Airport[] = [
         name: "VOR-A",
       },
     ],
+    youtube: [
+      {
+        title:
+          "Lake Havasu City Airport (KHII) | The Small Desert Town with An 8000ft Runway",
+        url: "https://youtu.be/gsDbuPiSaV8",
+        date: "12/5/2025",
+      },
+    ],
     description: {
       summary:
         "Fly with us into Lake Havasu City Airport Municipal (KHII) in our Piper Arrow. We'll take you through the brand new Velocity FBO facilities, reveal a hidden gem for transient parking that every pilot needs to know about, and grab lunch at the legendary Hangar 24 brewery restaurant right on the airport grounds. And don’t miss the stunning tail cam departure footage over the Lake Havasu desert landscape that you simply cannot miss.\n" +
@@ -136,6 +144,19 @@ export const AIRPORTS: Airport[] = [
     elevation: 56,
     latitude: 33.6757,
     longitude: -117.8682,
+    youtube: [
+      {
+        title:
+          "John Wayne Airport (KSNA) | Two Go-Arounds - All to See the Museum Returning to MCAS El Toro",
+        url: "https://youtu.be/Sni9XeuCZLs",
+        date: "11/28/2025",
+      },
+      {
+        title: "John Wayne Airport (KSNA) | The ULTIMATE Pilots Guide",
+        url: "https://youtu.be/K5M_ikMIOe0",
+        date: "4/4/2025",
+      },
+    ],
     runways: [
       { id: "02L/20R", length: 5701, width: 150, surface: "Concrete" },
       { id: "02R/20L", length: 2886, width: 75, surface: "Asphalt" },
@@ -206,6 +227,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 191,
     latitude: 37.3805,
     longitude: -120.5682,
+    youtube: [
+      {
+        title:
+          "Castle Airport (KMER) | This Legendary Air Museum Has a Problem (But We Loved It Anyway)",
+        url: "https://youtu.be/-DaEwBII3Yo",
+        date: "11/21/2025",
+      },
+    ],
     runways: [{ id: "13/31", length: 11702, width: 150, surface: "Concrete" }],
     frequencies: [
       { type: "CTAF/UNICOM", mhz: "122.7" },
@@ -263,6 +292,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 331,
     latitude: 33.1283,
     longitude: -117.2795,
+    youtube: [
+      {
+        title:
+          "McClellan-Palomar Airport (KCRQ) | You've Probably Never Heard of THIS Museum",
+        url: "https://youtu.be/FCxnhzrHbN0",
+        date: "11/14/2025",
+      },
+    ],
     runways: [{ id: "06/24", length: 4897, width: 150, surface: "Asphalt" }],
     frequencies: [
       { type: "ATIS", mhz: "118.15" },
@@ -340,6 +377,13 @@ export const AIRPORTS: Airport[] = [
     elevation: 2121,
     latitude: 38.0304167,
     longitude: -120.4145556,
+    youtube: [
+      {
+        title: "Columbia Airport (O22) | The Tour We DIDN'T Expect",
+        url: "https://youtu.be/EwZh8lmfyH8",
+        date: "11/7/2025",
+      },
+    ],
     runways: [
       { id: "17/35", length: 4673, width: 75, surface: "Asphalt" },
       { id: "11/29", length: 2607, width: 50, surface: "Turf" },
@@ -388,6 +432,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 3062,
     latitude: 34.5753,
     longitude: -117.1862,
+    youtube: [
+      {
+        title:
+          "Apple Valley Airport (KAPV) | We Found The BEST Seats At The Airshow",
+        url: "https://youtu.be/noLIvB21cOw",
+        date: "10/31/2025",
+      },
+    ],
     runways: [
       { id: "18/36", length: 6498, width: 150, surface: "Asphalt" },
       { id: "08/26", length: 4100, width: 60, surface: "Asphalt" },
@@ -436,6 +488,13 @@ export const AIRPORTS: Airport[] = [
     latitude: 33.0392,
     longitude: -116.915,
     displayDay: "3rd Sunday of the Month",
+    youtube: [
+      {
+        title: "Ramona Airport (KRNM) | The SECRET Inside Ramona Airport",
+        url: "https://youtu.be/Z-MOf9DHV-M",
+        date: "10/24/2025",
+      },
+    ],
     runways: [{ id: "09/27", length: 5006, width: 150, surface: "Asphalt" }],
     frequencies: [
       { type: "TOWER", mhz: "119.87" },
@@ -478,6 +537,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 250,
     latitude: 34.347,
     longitude: -119.0616,
+    youtube: [
+      {
+        title:
+          "Santa Paula Airport (KSZP) | Step Back Into the Golden Era of California General Aviation",
+        url: "https://youtu.be/7V1-ORvL8Jk",
+        date: "10/17/2025",
+      },
+    ],
     runways: [
       { id: "04/22", length: 2665, width: 60, surface: "Asphalt" },
       { id: "H1", length: 60, width: 60, surface: "Asphalt" },
@@ -521,6 +588,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 1159,
     latitude: 34.0954,
     longitude: -117.235,
+    youtube: [
+      {
+        title:
+          "San Bernardino International Airport (KSBD) | Formerly Norton AFB: What It Looks Like Today",
+        url: "https://youtu.be/s_3Djwap_L4",
+        date: "10/10/2025",
+      },
+    ],
     runways: [{ id: "06/24", length: 10000, width: 200, surface: "Concrete" }],
     frequencies: [
       { type: "ATIS", mhz: "124.175" },
@@ -601,6 +676,14 @@ export const AIRPORTS: Airport[] = [
     elevation: 802,
     latitude: 34.2098,
     longitude: -118.4899,
+    youtube: [
+      {
+        title:
+          "Van Nuys Airport (KVNY) | Runway Closure, Go-Around & Ground Confusion",
+        url: "https://youtu.be/rWvxaxKvGF8",
+        date: "4/25/2025",
+      },
+    ],
     runways: [
       { id: "16R/34L", length: 8001, width: 150, surface: "Asphalt" },
       { id: "16L/34R", length: 4011, width: 75, surface: "Asphalt" },

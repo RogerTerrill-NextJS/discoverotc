@@ -3,7 +3,7 @@ import { Airport } from "@/data/types";
 
 const PreviousVideos = ({ airport }: { airport: Airport }) => {
   const links = airport?.youtube?.slice(1);
-  if (!links) return null;
+  if (links?.length === 0) return null;
 
   return (
     <section className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
@@ -11,19 +11,22 @@ const PreviousVideos = ({ airport }: { airport: Airport }) => {
         Previous Videos
       </h3>
       <ul className="space-y-3">
-        {links.map((link, idx) => (
+        {links?.map((link, idx) => (
           <li key={idx}>
-            <span className="text-md font-medium text-slate-800 group-hover:text-blue-600 transition-colors">
-              {link.date}:
-            </span>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
-            >
-              {link.title}
-            </a>
+            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 group">
+              <span className="text-xs font-semibold tracking-widest uppercase text-slate-500">
+                {link.date}
+              </span>
+
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-md font-bold text-slate-900 hover:text-blue-600 transition-colors"
+              >
+                {link.title}
+              </a>
+            </div>
           </li>
         ))}
       </ul>
