@@ -747,6 +747,64 @@ export const AIRPORTS: Airport[] = [
         "And don't forget to study the noise abatement procedures (Departure Techniques section) before going: https://www.iflyvny.com/pilot-information/noise-restrictions",
     },
   },
+  {
+    icao: "KWJF",
+    name: "General William J. Fox Airfield",
+    city: "Lancaster",
+    state: "CA",
+    elevation: 2351,
+    latitude: 34.7411,
+    longitude: -118.2186,
+    youtube: [
+      {
+        title:
+          "General William J Fox Airfield (KWJF) | Tanker Base, Texans & Foxy's Landing",
+        url: "https://youtu.be/7MhMPD1S6Xw",
+        date: "10/3/2025",
+      },
+    ],
+    runways: [{ id: "06/24", length: 7201, width: 150, surface: "Asphalt" }],
+    frequencies: [
+      { type: "ATIS", mhz: "126.30" },
+      { type: "TOWER", mhz: "118.525" },
+      { type: "GROUND", mhz: "121.7" },
+      { type: "CTAF/UNICOM", mhz: "122.95" },
+      { type: "APP/DEP (Joshua)", mhz: "126.1" },
+    ],
+    approaches: [
+      {
+        runway: "06",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 06",
+      },
+      {
+        runway: "24",
+        type: "RNAV (GPS)",
+        name: "RNAV (GPS) RWY 24",
+      },
+      {
+        runway: "—",
+        type: "VOR",
+        name: "VOR‑B",
+      },
+    ],
+    description: {
+      summary:
+        "Fly with us in our Piper Arrow into sleepy Fox Field (KWJF) onto Runway 6. This airport serves the wonderful people of Aerospace Valley – an area known for its innovation and record setting history. We’ll take you along as we try the food at the airport café, Foxy’s Landing, wander the airport grounds and get surprise visit from a very famous SoCal flying group. Stay til the end to get a unique view of the airport from the tail cam as we fly over the mountains back home. \n" +
+        "\n" +
+        "Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit",
+      transientParking:
+        "Transient parking is located on the east end of the ramp directly in front of the terminal. There are plenty of tie down spots with chains. No posted transient parking fees.",
+      fuel: "Self-serve fuel is located about midfield. Avgas was $5.97/gal during out September 2025 visit.",
+      restrooms:
+        "There are restrooms located within the terminal building. If those are inaccessible after hours look for restrooms near the hangar rows directly west of Barnes Aviation. You’ll find restrooms every couple of hangar rows.",
+      transportation:
+        "There are no crew cars or car rentals available here. Rideshare can be tricky and expensive when available.",
+      food: "Foxy’s Landing is located on field in the terminal building. The food was good and the service is friendly. Snag a seat by the windows with a view out onto the ramp. Take some time to look at the photos scattered about – you’ll find some very cool pictures. AND don’t forget to look at the stickers on the door – those stickers definitely tell a story about the area.",
+      additionalInfo:
+        "You’ll find pilots and aviation enthusiasts alike here. The airport grounds are filled with all types of planes and pilots of all backgrounds – many whom have worked and some who still do, at Edwards AFB or Plant 42 Palmdale.",
+    },
+  },
 ];
 
 const AIRPORTSCHEMA = [

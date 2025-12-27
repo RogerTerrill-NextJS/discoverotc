@@ -49,7 +49,7 @@ export interface Airport {
   diagramUrl?: string;
   displayDay?: string;
   approaches?: Approach[];
-  youtube?: youtubeLink[];
+  youtube: youtubeLink[];
   description?: {
     summary: string;
     transientParking?: string;

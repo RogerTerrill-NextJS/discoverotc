@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function HamburgerMenu() {
   const [open, setOpen] = useState(false);
@@ -40,20 +39,29 @@ export default function HamburgerMenu() {
       {open && (
         <div className="absolute right-0 mt-2 w-30 rounded-xl border border-slate-200 bg-white shadow-lg z-50">
           <nav className="flex flex-col divide-y divide-slate-100">
-            {[
-              { href: "/about", label: "About" },
-              { href: "/displaydays", label: "Display Days" },
-              { href: "/contact", label: "Contact" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-4 py-3 text-sm font-medium text-slate-700 text-center hover:bg-slate-100"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {/*{[*/}
+            {/*  { href: "/about", label: "About" },*/}
+            {/*  { href: "/displaydays", label: "Display Days" },*/}
+            {/*  { href: "/contact", label: "Contact" },*/}
+            {/*].map((item) => (*/}
+            {/*  <Link*/}
+            {/*    key={item.href}*/}
+            {/*    href={item.href}*/}
+            {/*    onClick={() => setOpen(false)}*/}
+            {/*    className="px-4 py-3 text-sm font-medium text-slate-700 text-center hover:bg-slate-100"*/}
+            {/*  >*/}
+            {/*    {item.label}*/}
+            {/*  </Link>*/}
+            {/*))}*/}
+            <a
+              href="https://w503x1-14.myshopify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="px-4 py-3 text-sm font-medium text-slate-700 text-center hover:bg-slate-100"
+            >
+              Shop
+            </a>
           </nav>
         </div>
       )}

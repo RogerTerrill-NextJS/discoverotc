@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import SocialMediaIcons from "@/components/SocialMediaIcons";
+import Dropdown from "@/components/Dropdown";
 import Image from "next/image";
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
             <SocialMediaIcons social="instagram" />
             <SocialMediaIcons social="email" />
           </div>
-          {/*<Dropdown />*/}
+          <Dropdown />
         </div>
       </div>
     </header>
