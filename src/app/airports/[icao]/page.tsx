@@ -1,5 +1,6 @@
 import React from "react";
 import { getAirportByICAO } from "@/lib/data";
+import { getYoutubeId } from "@/lib/utils";
 
 import Weather from "@/components/Weather";
 import Runways from "@/components/Runways";
@@ -11,6 +12,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import InfoSection from "@/components/InfoSection";
 import DisplayDay from "@/components/DisplayDay";
 import AdditionalVideos from "@/components/PreviousVideos";
+import YoutubeVideo from "@/components/YoutubeVideo";
 
 export default async function AirportDetails({
   params,
@@ -30,6 +32,7 @@ export default async function AirportDetails({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Left Column */}
         <div className="lg:col-span-2 space-y-8">
+          <YoutubeVideo videoId={getYoutubeId(airport.youtube[0].url)} />
           <InfoSection title="Summary" airport={airport}></InfoSection>
           <InfoSection
             title="Transient Parking"
