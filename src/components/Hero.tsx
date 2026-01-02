@@ -7,11 +7,12 @@ const Hero = () => {
         Go Fly, Go Discover
       </h2>
       <p className='text-slate-500 mb-8'>
-        Our mission is to fly to airports and share everything you need to know
-        to experience them yourself. From practical details to hidden gems, we
-        highlight the beauty of unique destinations and the amazing people we
-        meet along the way — encouraging pilots and aviation fans alike to
-        explore, connect, and create their own adventures.
+        We fly to airports across the country to create detailed pilot-friendly
+        airport guides, sharing everything you need to know to visit them
+        yourself. From runway information and arrival tips to local highlights
+        and hidden gems, we showcase the beauty of unique airports and meet the
+        amazing people who make each destination special — inspiring pilots and
+        aviation enthusiasts to plan their own unforgettable flying adventures.
       </p>
     </>
   );
