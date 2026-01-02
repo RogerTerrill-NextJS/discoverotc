@@ -52,7 +52,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <NewsletterSignup />
+        {/*<NewsletterSignup />*/}
         <Footer />
       </body>
     </html>
