@@ -7,17 +7,27 @@ export const NewsletterSignup: React.FC = () => {
     'idle',
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email) return;
 
     setStatus('submitting');
 
-    // Simulate API request
-    setTimeout(() => {
+    try {
+      const res = await fetch('/.netlify/functions/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) throw new Error('Failed to subscribe');
+
       setStatus('success');
       setEmail('');
-    }, 1500);
+    } catch (error) {
+      console.error(error);
+      setStatus('idle');
+    }
   };
 
   return (
