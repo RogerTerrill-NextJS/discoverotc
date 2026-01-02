@@ -129,7 +129,10 @@ export const NewsletterSignup: React.FC = () => {
           )}
           <p className='mt-4 text-sm text-slate-500'>
             We care about your data. Read our{' '}
-            <a href='#' className='text-slate-400 hover:text-white underline'>
+            <a
+              href='/privacy'
+              className='text-slate-400 hover:text-white underline'
+            >
               Privacy Policy
             </a>
             .
