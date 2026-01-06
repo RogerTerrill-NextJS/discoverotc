@@ -487,7 +487,6 @@ export const AIRPORTS: Airport[] = [
     elevation: 1395,
     latitude: 33.0392,
     longitude: -116.915,
-    displayDay: '3rd Sunday of the Month',
     youtube: [
       {
         title: 'Ramona Airport (KRNM) | The SECRET Inside Ramona Airport',
@@ -526,7 +525,9 @@ export const AIRPORTS: Airport[] = [
       museum:
         'Ramona Airport has one of two dedicated rotorcraft museums in the United States; The Classics Rotor Museum. The museum is filled with rare and vintage rotorcraft and has an incredible team of dedicated volunteers who have flown and personally worked on the aircraft found at this museum. It’s an impressive collection that every aviation enthusiast must see. Admission is free and the museum is open Tuesdays & Friday 10am-4pm and Saturdays 10am-6pm.',
       additionalInfo:
-        'Ramona Airport is home to a joint Cal Fire – U.S. Forest Service Air Tanker Base. Cal Fire currently has an OV-10 Bronco and (2) S2T Grumman Tankers here. The U.S. Forest Service has one UH-1 Huey at this location. All firefighting aircraft are in transient parking while the Cal Fire base gets a few upgrades. It’s a great way to see these amazing machines up close.',
+        'Ramona Airport is home to a joint Cal Fire – U.S. Forest Service Air Tanker Base. Cal Fire currently has an' +
+        ' OV-10 Bronco and (2) S2T Grumman Tankers here. The U.S. Forest Service has one UH-1 Huey at this location. All firefighting aircraft are in transient parking while the Cal Fire base gets a few upgrades. It’s a great way to see these amazing machines up close.',
+      displayDay: '3rd Sunday of the Month',
     },
   },
   {
@@ -537,7 +538,6 @@ export const AIRPORTS: Airport[] = [
     elevation: 250,
     latitude: 34.347,
     longitude: -119.0616,
-    displayDay: '1st Sunday of the Month',
     youtube: [
       {
         title:
@@ -546,10 +546,7 @@ export const AIRPORTS: Airport[] = [
         date: '10/17/2025',
       },
     ],
-    runways: [
-      { id: '04/22', length: 2665, width: 60, surface: 'Asphalt' },
-      { id: 'H1', length: 60, width: 60, surface: 'Asphalt' },
-    ],
+    runways: [{ id: '04/22', length: 2665, width: 60, surface: 'Asphalt' }],
     frequencies: [{ type: 'CTAF/UNICOM', mhz: '122.90' }],
     approaches: [
       {
@@ -579,6 +576,7 @@ export const AIRPORTS: Airport[] = [
         'Santa Paula is known for its aerobatics school. You’ll often find aerobatic planes landing, taking off and practicing in the area. Be sure to listen to carefully to radios calls as you’re coming in or taking off and do your part by making radio calls.  \n' +
         '\n' +
         'This was also the home of the Mason Wing Walking School prior to it’s shutdown in 2024. For more information on the shut down check out this article: https://www.seattletimes.com/business/faa-halts-sequim-wing-walking-flights-revokes-owners-pilot-license/',
+      displayDay: '1st Sunday of the Month',
     },
   },
   {
@@ -859,56 +857,56 @@ export const AIRPORTS: Airport[] = [
   },
 ];
 
-const AIRPORTSCHEMA = [
-  {
-    icao: 'KSNA',
-    name: 'John Wayne Airport',
-    city: 'Santa Ana',
-    state: 'CA',
-    elevation: 56,
-    latitude: 33.6757,
-    longitude: -117.8682,
-    runways: [
-      { id: '02L/20R', length: 5701, width: 150, surface: 'Concrete' },
-      { id: '02R/20L', length: 2886, width: 75, surface: 'Asphalt' },
-    ],
-    frequencies: [
-      { type: 'ATIS', mhz: '126.0' },
-      { type: 'TOWER', mhz: '120.8' },
-      { type: 'GROUND', mhz: '121.9' },
-      { type: 'CLEARANCE', mhz: '118.0' },
-    ],
-    approaches: [
-      {
-        runway: '20R',
-        type: 'ILS OR LOC',
-        name: 'ILS or LOC RWY 20R',
-      },
-      {
-        runway: '20R',
-        type: 'RNAV (GPS)',
-        name: 'RNAV (GPS) RWY 20R',
-      },
-      {
-        runway: '20L',
-        type: 'RNAV (GPS)',
-        name: 'RNAV (GPS) RWY 20L',
-      },
-      {
-        runway: '02L',
-        type: 'RNAV (GPS)',
-        name: 'RNAV (GPS) RWY 02L',
-      },
-      {
-        runway: '02R',
-        type: 'RNAV (GPS)',
-        name: 'RNAV (GPS) RWY 02R',
-      },
-      {
-        runway: '20R',
-        type: 'VOR',
-        name: 'VOR RWY 20R',
-      },
-    ],
-  },
-];
+// const AIRPORTSCHEMA = [
+//   {
+//     icao: 'KSNA',
+//     name: 'John Wayne Airport',
+//     city: 'Santa Ana',
+//     state: 'CA',
+//     elevation: 56,
+//     latitude: 33.6757,
+//     longitude: -117.8682,
+//     runways: [
+//       { id: '02L/20R', length: 5701, width: 150, surface: 'Concrete' },
+//       { id: '02R/20L', length: 2886, width: 75, surface: 'Asphalt' },
+//     ],
+//     frequencies: [
+//       { type: 'ATIS', mhz: '126.0' },
+//       { type: 'TOWER', mhz: '120.8' },
+//       { type: 'GROUND', mhz: '121.9' },
+//       { type: 'CLEARANCE', mhz: '118.0' },
+//     ],
+//     approaches: [
+//       {
+//         runway: '20R',
+//         type: 'ILS OR LOC',
+//         name: 'ILS or LOC RWY 20R',
+//       },
+//       {
+//         runway: '20R',
+//         type: 'RNAV (GPS)',
+//         name: 'RNAV (GPS) RWY 20R',
+//       },
+//       {
+//         runway: '20L',
+//         type: 'RNAV (GPS)',
+//         name: 'RNAV (GPS) RWY 20L',
+//       },
+//       {
+//         runway: '02L',
+//         type: 'RNAV (GPS)',
+//         name: 'RNAV (GPS) RWY 02L',
+//       },
+//       {
+//         runway: '02R',
+//         type: 'RNAV (GPS)',
+//         name: 'RNAV (GPS) RWY 02R',
+//       },
+//       {
+//         runway: '20R',
+//         type: 'VOR',
+//         name: 'VOR RWY 20R',
+//       },
+//     ],
+//   },
+// ];

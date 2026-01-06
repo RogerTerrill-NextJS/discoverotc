@@ -23,17 +23,17 @@ export interface youtubeLink {
 }
 
 export type DescriptionType =
-  | "summary"
-  | "transientParking"
-  | "fuel"
-  | "restrooms"
-  | "transportation"
-  | "food"
-  | "fbo"
-  | "terminalBuilding"
-  | "campground"
-  | "museum"
-  | "additionalInfo";
+  | 'summary'
+  | 'transientParking'
+  | 'fuel'
+  | 'restrooms'
+  | 'transportation'
+  | 'food'
+  | 'fbo'
+  | 'terminalBuilding'
+  | 'campground'
+  | 'museum'
+  | 'additionalInfo';
 
 export interface Airport {
   icao: string;
@@ -47,7 +47,6 @@ export interface Airport {
   frequencies: Frequency[];
   imageUrl?: string;
   diagramUrl?: string;
-  displayDay?: string;
   approaches?: Approach[];
   youtube: youtubeLink[];
   description?: {
@@ -62,6 +61,7 @@ export interface Airport {
     transportation?: string;
     restrooms?: string;
     additionalInfo?: string;
+    displayDay?: string;
   };
 }
 
@@ -86,19 +86,19 @@ export interface WeatherData {
   }[];
 }
 
-export interface PlaceRecommendation {
-  text: string;
-  chunks: GroundingChunk[];
-}
-
-export interface GroundingChunk {
-  web?: {
-    uri: string;
-    title: string;
-  };
-  maps?: {
-    uri: string;
-    title: string;
-    placeAnswerSources?: any[];
-  };
-}
+// export interface PlaceRecommendation {
+//   text: string;
+//   chunks: GroundingChunk[];
+// }
+//
+// export interface GroundingChunk {
+//   web?: {
+//     uri: string;
+//     title: string;
+//   };
+//   maps?: {
+//     uri: string;
+//     title: string;
+//     placeAnswerSources?: any[];
+//   };
+// }
