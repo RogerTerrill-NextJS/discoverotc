@@ -1,6 +1,6 @@
-import {Airport, DescriptionType} from "@/data/types";
-import IconComponent from "@/components/Icon";
-import {toCamelCase} from "@/lib/utils";
+import { Airport, DescriptionType } from '@/data/types';
+import IconComponent from '@/components/Icon';
+import { toCamelCase } from '@/lib/utils';
 
 type InfoSectionProps = {
   title: string;
@@ -17,9 +17,9 @@ function linkify(text: string) {
         <a
           key={index}
           href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline hover:text-blue-800"
+          target='_blank'
+          rel='noopener noreferrer'
+          className='text-blue-600 underline hover:text-blue-800'
         >
           {part}
         </a>
@@ -30,25 +30,20 @@ function linkify(text: string) {
   });
 }
 
-export default function InfoSection({
-                                      title,
-                                      airport,
-                                    }: InfoSectionProps) {
+export default function InfoSection({ title, airport }: InfoSectionProps) {
   const type = toCamelCase(title) as DescriptionType;
 
-  if (!airport?.description?.[type]) return null;
+  if (!airport?.[type]) return null;
 
   return (
-    <section className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
-      <div className="flex items-center mb-4">
-        <IconComponent type={type}/>
-        <h3 className="text-xl font-semibold text-slate-800">
-          {title}
-        </h3>
+    <section className='bg-white rounded-xl border border-slate-200 shadow-sm p-6'>
+      <div className='flex items-center mb-4'>
+        <IconComponent type={type} />
+        <h3 className='text-xl font-semibold text-slate-800'>{title}</h3>
       </div>
 
-      <div className="prose prose-slate text-slate-600 max-w-none leading-relaxed whitespace-pre-line">
-        {linkify(airport?.description?.[type])}
+      <div className='prose prose-slate text-slate-600 max-w-none leading-relaxed whitespace-pre-line'>
+        {linkify(airport?.[type])}
       </div>
     </section>
   );

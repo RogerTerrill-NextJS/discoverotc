@@ -49,20 +49,18 @@ export interface Airport {
   diagramUrl?: string;
   approaches?: Approach[];
   youtube: youtubeLink[];
-  description?: {
-    summary: string;
-    transientParking?: string;
-    museum?: string;
-    fbo?: string;
-    terminalBuilding?: string;
-    campground?: string;
-    food?: string;
-    fuel?: string;
-    transportation?: string;
-    restrooms?: string;
-    additionalInfo?: string;
-    displayDay?: string;
-  };
+  summary: string;
+  transientParking?: string;
+  museum?: string;
+  fbo?: string;
+  terminalBuilding?: string;
+  campground?: string;
+  food?: string;
+  fuel?: string;
+  transportation?: string;
+  restrooms?: string;
+  additionalInfo?: string;
+  displayDay?: string;
 }
 
 export interface AIState<T> {
