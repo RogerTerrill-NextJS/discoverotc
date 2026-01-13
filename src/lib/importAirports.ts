@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import { Airport } from '@/data/types';
 
 // tsx src/scripts/runImportAirports
 const supabase = createClient(
@@ -36,7 +37,7 @@ export type AirportObject = {
   youtube?: { title: string; url: string; date: string }[];
 };
 
-export async function importAirports(airports: AirportObject[]) {
+export async function importAirports(airports: Airport[]) {
   for (const airport of airports) {
     try {
       // 1️⃣ Insert core airport info
