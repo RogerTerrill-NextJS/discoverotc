@@ -89,20 +89,41 @@ export default function AirportEditor({
     setSaving(true);
     setMessage(null);
 
-    const res = await fetch('/api/admin/airports/save', {
-      method: 'POST',
+    try {
+      const res = await fetch(`/api/admin/airports/${form.icao}`, {
+        method: 'PATCH', // use PATCH instead of POST
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form), // can later optimize to only changed fields
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        setMessage(`❌ Failed to save airport: ${errData.message}`);
+      } else {
+        const data = await res.json();
+        setMessage('✅ Airport saved successfully');
+        console.log('Updated airport:', data);
+      }
+    } catch (err) {
+      console.error('Error saving airport:', err);
+      setMessage('❌ Failed to save airport (network error)');
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function testUpdateAirport() {
+    const response = await fetch('/api/admin/airports/7F7', {
+      method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        name: 'Clifton Municipal Airport Updated',
+        summary: 'Updated summary from client',
+      }),
     });
 
-    setSaving(false);
-
-    if (!res.ok) {
-      setMessage('❌ Failed to save airport');
-      return;
-    }
-
-    setMessage('✅ Airport saved successfully');
+    const data = await response.json();
+    console.log(data);
   }
 
   return (
@@ -252,7 +273,7 @@ export default function AirportEditor({
       {/* Actions */}
       <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
         <button
-          onClick={saveAirport}
+          onClick={testUpdateAirport}
           disabled={saving}
           className='bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 transition'
         >
