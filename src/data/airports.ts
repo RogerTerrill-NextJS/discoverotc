@@ -1,299 +1,319 @@
 import { Airport } from './types';
 
-// export const AIRPORTS: Airport[] = [
-//   {
-//     icao: '7F7',
-//     name: 'Clifton Municipal Airport/Isenhower Field',
-//     city: 'Clifton',
-//     state: 'TX',
-//     elevation: 760,
-//     latitude: 31.8171333,
-//     longitude: -97.5695694,
-//     runways: [
-//       {
-//         id: '14/32',
-//         length: 3000,
-//         width: 50,
-//         surface: 'Asphalt',
-//       },
-//     ],
-//     frequencies: [{ type: 'CTAF/UNICOM', mhz: '122.8' }],
-//     approaches: [], // No published instrument approaches at 7F7
-//     youtube: [
-//       {
-//         title:
-//           'Clifton Municipal Airport (7F7) | This Small Texas Airport Surprised Us',
-//         url: 'https://youtu.be/A4dGKUDBZZ0',
-//         date: '1/2/2026',
-//       },
-//     ],
-//     summary:
-//       "Join us as we fly into idyllic Clifton Municipal Airport (7F7) in Bosque County, Clifton, Texas. We step inside the comfy pilot's lounge, grab the crew car and get a bite to eat in town while catching a glimpse of the downtown Clifton. We didn't stay for long but we share the most important information you need to know for your stop here! \n" +
-//       '\n' +
-//       'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
-//     transientParking:
-//       'There is plenty of transient parking. Parking can be found on the southside of the northern most hangars and near the fuel island. ',
-//     museum: '',
-//     terminalBuilding: '',
-//     additionalInfo:
-//       'Clifton is known as the Norwegian Capital of Texas and has an incredible art scene. A few of the downtown restaurants also have live music in the evenings. The downtown area has a few shops and galleries. \n' +
-//       '\n' +
-//       'Otherwise take a drive though town, enjoy the scenic landscape and cross over the North Bosque River next to the 1884 Whipple Truss Bridge: https://www.texasescapes.com/CentralTexasTownsNorth/CliftonTexas/Whipple-Truss-Bridge-Clifton-Texas.htm\n' +
-//       '\n' +
-//       'This was a great stop to refuel and recharge. Clifton Aero could not have been nicer. And the cheap fuel was a plus! We highly recommend Clifton Municipal Airport as a fuel stop while in central Texas. \n',
-//     fuel: 'Self service fuel is available west of the runway midfield.',
-//     restrooms: 'Restrooms are located within the Pilot’s Lounge.  ',
-//     transportation:
-//       'Courtesy cars are available. We highly recommend taking the courtesy car into town to grab a bite to eat and check out the vibrant art scene. ',
-//     food: 'Downtown Clifton has quite a few restaurant options to choose from. Check out Olaf’s for steak, Breaking Bread Bakery & Deli for sandwiches and China Wok. Bunkhouse BBQ and Johnny’s Place is a little farther south but still close enough for a quick stop. ',
-//     fbo: 'Clifton Aero is the FBO on field and they’re fantastic. They provided a large courtesy car for our group and ensured we didn’t need any other services. If you need anything during your stop do not hesitate to ask! ',
-//   },
-//   {
-//     icao: 'KTUS',
-//     name: 'Tucson International Airport',
-//     city: 'Tucson',
-//     state: 'AZ',
-//     elevation: 2643,
-//     latitude: 32.117,
-//     longitude: -110.942,
-//     runways: [
-//       {
-//         id: '12/30',
-//         length: 10996,
-//         width: 150,
-//         surface: 'Asphalt/Grooved',
-//       },
-//       {
-//         id: '4/22',
-//         length: 7000,
-//         width: 150,
-//         surface: 'Asphalt/Grooved',
-//       },
-//     ],
-//     frequencies: [
-//       { type: 'ATIS', mhz: '123.8' },
-//       { type: 'UNICOM', mhz: '122.95' },
-//       { type: 'Clearance Delivery', mhz: '126.65' },
-//       { type: 'Ground', mhz: '124.4' },
-//       { type: 'Tower', mhz: '118.30' },
-//       { type: 'Tower', mhz: '119.00' },
-//       { type: 'Approach/Departure', mhz: '119.40' },
-//       { type: 'Approach/Departure', mhz: '125.10' },
-//     ],
-//     approaches: [
-//       {
-//         runway: '12',
-//         type: 'ILS/DME',
-//         name: 'ILS OR LOC RWY 12',
-//       },
-//       {
-//         runway: '12',
-//         type: 'RNAV (RNP)',
-//         name: 'RNAV (RNP) Y RWY 12',
-//       },
-//       {
-//         runway: '12',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 12',
-//       },
-//       {
-//         runway: '12',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) Z RWY 12',
-//       },
-//       {
-//         runway: '30',
-//         type: 'RNAV (RNP)',
-//         name: 'RNAV (RNP) Y RWY 30',
-//       },
-//       {
-//         runway: '30',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 30',
-//       },
-//       {
-//         runway: '30',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) Z RWY 30',
-//       },
-//       {
-//         runway: '12',
-//         type: 'VOR/TACAN',
-//         name: 'VOR OR TACAN RWY 12',
-//       },
-//       {
-//         runway: '30',
-//         type: 'VOR/TACAN',
-//         name: 'VOR OR TACAN RWY 30',
-//       },
-//     ],
-//     youtube: [
-//       {
-//         title:
-//           'Tucson International Airport (KTUS) | This Turned Into Something Way Bigger Than Planned',
-//         url: 'https://youtu.be/qekeeuAH210',
-//         date: '12/26/2025',
-//       },
-//     ],
-//     summary:
-//       'Join us as we fly into bustling Tucson International Airport (KTUS) and airport #100 for us! We visit Million Air FBO, get a behind the scenes tour of the 390th Museum at the Pima Air & Space Museum and try to get a glimpse of Davis Monthan from the ground and from above. \n' +
-//       'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
-//     transientParking:
-//       'You won’t find any transient parking at Tucson International Airport. There are four FBOs on field to choose from; Atlantic Aviation TUS, Executive Air Tucson, Million Air Tucson and Tucson Jet Center.',
-//     museum:
-//       'Pima Air and Space Museum was a bucket list museum for us and we are so glad we finally got to visit! Seeing the Peacemaker, Phillipine Mars, SOFIA, and the finally a C141 was incredible!  \n' +
-//       '\n' +
-//       'The 390th Memorial Museum was the highlight of the day with a beautifully restored B-17 and a masterfully impactful tribute to the men who sacrificed their lives for our country. To those brave men, we are ever so grateful, we salute you.',
-//     terminalBuilding: '',
-//     additionalInfo: '',
-//     fuel: 'Full service fuel is provided by your FBO of choice. ',
-//     restrooms: 'Restrooms are located within each of the FBOs. ',
-//     transportation:
-//       'Crew cars are available with a 2 hour limit. A rental car for longer stays can be arranged with your FBO of choice. If handling your own rental, pickups are located at the east end of the Airport Terminal. Rideshare is also available, just be sure that your pickup spot reflects your FBO and not the main commercial terminal.',
-//     food: 'Head downtown for the most diverse food options in Tucson. You can’t go wrong with either El Charro Café (home of the chimichanga) or Guadalajara Grill. But be sure to try the Sonoran hot dog. The best place to get one of these hot dogs is hotly contested but top contenders are El Sinaloense, Ruiz on the 6th and BK.',
-//     fbo:
-//       'Million Air Tucson was our FBO of choice. The service was warm, friendly and professional. The main lounge has plenty of seating with views out onto the ramp, coffee, soda and water. The Pilot’s Lounge has comfy seating, two Quiet Rooms, flight planning stations, snacks, water and a microwave. A large Conference Room is also available.\n' +
-//       '\n' +
-//       'Breakdown of fees for our Piper Arrow III for DECEMBER 2025 (2 Night Stay) \n' +
-//       '$0 Ramp Fee Night 1 (fee Waived with 35 gal minimum fuel purchase)\n' +
-//       '$35 Ramp Fee Night 2 (@$50/night w/ 30% discount)\n' +
-//       '$256.50 Avgas (30 gallons @ $8.55/gal) \n' +
-//       '$291.50 TOTAL\n' +
-//       '\n' +
-//       'We enjoyed the hospitality at Million Air TUS and we will continue to make this a stop on any of our trips east. ',
-//   },
-//   {
-//     icao: 'KUDD',
-//     name: 'Bermuda Dunes Airport',
-//     city: 'Bermuda Dunes',
-//     state: 'CA',
-//     elevation: 73,
-//     latitude: 33.7484,
-//     longitude: -116.2748,
-//     runways: [{ id: '10/28', length: 5002, width: 70, surface: 'Asphalt' }],
-//     frequencies: [
-//       { type: 'CTAF/UNICOM', mhz: '122.8' },
-//       { type: 'APP/DEP', mhz: '135.275' },
-//     ],
-//     approaches: [
-//       {
-//         runway: '10',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 10',
-//       },
-//       {
-//         runway: '28',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 28',
-//       },
-//       {
-//         runway: 'CIRCLING',
-//         type: 'VOR',
-//         name: 'VOR-C',
-//       },
-//     ],
-//     youtube: [
-//       {
-//         title:
-//           'Bermuda Dunes Airport (KUDD) | THIS is Why Bermuda Dunes Really is A Desert Oasis',
-//         url: 'https://youtu.be/mCoTYR4JPhk',
-//         date: '12/19/2025',
-//       },
-//     ],
-//     summary:
-//       'Join us as we fly out Piper Arrow into swanky Bermuda Dunes Airport (KUDD) in the Coachella Valley. We check out Crown Aero’s super cool décor, make a slight departure from our diet at a local upscale deli and find pink flamingos at a desert oasis. \n' +
-//       '\n' +
-//       'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
-//     transientParking:
-//       'You won’t find any transient parking at KUDD. Crown Aero is the FBO on site and they are fantastic.',
-//     fuel: 'Full service fuel is provided by Crown Aero, soon to be Dunes Air. Please note there is no self-serve fuel at this airport.',
-//     restrooms: 'Restrooms are located within the FBO.',
-//     transportation:
-//       'Crew cars are available with a 2 hour limit. A rental car for longer stays can be arranged with the FBO. Rideshare may not be reliable in the area.',
-//     food:
-//       'You’ll find plenty of food options within 5 miles of the airport. Crown Aero suggested TKB Bakery &' +
-//       ' Deli and it was delicious. The menu varied from smash burgers to hot and cold sandwiches. You’ll also find a bakery case and café offering coffee and tea drinks and milkshakes. It does tend to get busy during lunchtime and many people order ahead of time for pickup. Parking is plentiful and the outdoor seating is great during the spring and late fall.',
-//     fbo:
-//       'The FBO is located south of the approach end of RWY 28. The ramp is largely reserved for the bigger jets. Smaller GA will be placed east of the Crown Aero building and hangar. Tie down spots all have chains but its best to bring your own tie downs. The FBO is midcentury modern themed and tastefully done. You’ll find outdoor patio seating overlooking the ramp, a main lobby with seating, and two separate lounges for passengers and crew. Water, coffee and light snacks are available. \n' +
-//       '\n' +
-//       'Breakdown of fees for our Piper Arrow III for DECEMBER 2025 (3 Hour Stay) \n' +
-//       '$0 Handling Fee (fee Waived with 20 gal minimum fuel purchase)\n' +
-//       '$10 Facility Fee\n' +
-//       '$139.80 Avgas (20 gallons @ $6.99/gal) \n' +
-//       '$149.80 TOTAL',
-//     additionalInfo:
-//       'Whether you’re stopping for a quick refuel or staying for a festival, Bermuda Dunes Airport is a great stop. It feels like a small airport but has full airport amenities thanks to Crown Aero. \n' +
-//       '\n' +
-//       'NOTE: Crown Aero is set to change to Dunes Air in the coming months. It is our understanding that the services will remain the same and only the name will change. If you’re looking to get specific services at Bermuda Dunes Airport please call before arriving to confirm availability. \n' +
-//       '\n' +
-//       'For a cool article on the J.W. Marriott Desert Springs Resort check out this article by SF Gate: \n' +
-//       'https://www.sfgate.com/travel/article/jw-marriott-mega-lake-with-flamingos-calif-desert-19372124.php',
-//   },
-//   {
-//     icao: 'KHII',
-//     name: 'Lake Havasu City Airport',
-//     city: 'Lake Havasu City',
-//     state: 'AZ',
-//     elevation: 783,
-//     latitude: 34.5711,
-//     longitude: -114.3583,
-//     runways: [{ id: '14/32', length: 8000, width: 100, surface: 'Asphalt' }],
-//     frequencies: [
-//       { type: 'ATIS', mhz: '120.575' },
-//       { type: 'TOWER', mhz: '118.3' },
-//       { type: 'GROUND', mhz: '121.7' },
-//       { type: 'CLEARANCE', mhz: '125.8' },
-//     ],
-//     approaches: [
-//       {
-//         runway: '14',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 14',
-//       },
-//       {
-//         runway: '32',
-//         type: 'RNAV (GPS)',
-//         name: 'RNAV (GPS) RWY 32',
-//       },
-//       {
-//         runway: 'CIRCLING',
-//         type: 'VOR',
-//         name: 'VOR-A',
-//       },
-//     ],
-//     youtube: [
-//       {
-//         title:
-//           'Lake Havasu City Airport (KHII) | The Small Desert Town with An 8000ft Runway',
-//         url: 'https://youtu.be/gsDbuPiSaV8',
-//         date: '12/5/2025',
-//       },
-//     ],
-//
-//     summary:
-//       "Fly with us into Lake Havasu City Airport Municipal (KHII) in our Piper Arrow. We'll take you through the brand new Velocity FBO facilities, reveal a hidden gem for transient parking that every pilot needs to know about, and grab lunch at the legendary Hangar 24 brewery restaurant right on the airport grounds. And don’t miss the stunning tail cam departure footage over the Lake Havasu desert landscape that you simply cannot miss.\n" +
-//       '\n' +
-//       'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
-//     transientParking:
-//       'Transient parking is located in north of the Terminal. Spots are clearly marked. All spots have tie down' +
-//       ' chains. Fees can be paid at the neon “Transient Parking” sign or can be paid online via the QR code.' +
-//       ' Covered parking and hangar parking for small GA planes are available with reservations online. Overnight fees for uncovered spots are $14/night.',
-//     fbo: 'Velocity FBO is newish to the airport. Velocity has taken over Desert Air (adjacent to Hangar 24) and Havasu Air Center (northern most FBO). We visited Velocity North but did not use their services and we were wowed. There was a nice private Pilots Lounge with flight planning area, quiet rooms and a theater. The FBO has an assortment of coffee, drinks and snacks. Velocity North appears to service the larges GA planes and jets at Havasu. Service is friendly and FBO has a warm and elegant vibe. We will be back!',
-//     fuel: 'Self-serve fuel is located off of Taxiway B3, follow it west until you see the arrows directing you around the fuel pump. Fuel is reasonably priced here and easy to get in and out. Full service fuel is also available through Velocity FBO, call the phone number on the posted signs for fuel service.',
-//     restrooms:
-//       'Restrooms are within Hangar 24, Velocity FBO North and South. Public restrooms are marked with giant red signs. From transient parking head north past Hangar24 and the FBO, cross the walking bridge and the restrooms will be on the other side.',
-//     transportation:
-//       'Velocity FBO does have crew cars with a limit on a first come basis. For longer stays please contact Velocity FBO to set up a car rental. Avis is located on field at the Terminal Building. Enterprise rentals can be arranged through Velocity. Rideshare service is unreliable here.',
-//     food: 'Hangar 24 is the restaurant on field. There is limited uncovered outdoor seating with a limited view of the ramp and runway. Indoor seating is plentiful but the restaurant does fill up fast. Order at the bar, take a seat and wait for your food to arrive. Food ranges from burgers and salads to wraps and bowls. This is a brewery and if you’re staying overnight, check out their current offerings.',
-//     terminalBuilding:
-//       'The Terminal Building contains the Airport Admin Offices, Avis Rentals and a Military Lounge. Typically closed on the weekends and holidays.',
-//     additionalInfo:
-//       'Lake Havasu State Park is about 15 minutes south of the airport. Lake Havasu is a massive reservoir on the Colorado River, created by the Parker Dam. It stretches 45 miles long and holds enough water to cover the entire state of Pennsylvania one foot deep.\n' +
-//       '\n' +
-//       "Lake Havasu City is home to the actual London Bridge, which was purchased from the City of London in 1968 for $2.4 million and reconstructed brick-by-brick in the Arizona desert. It's now one of Arizona's top tourist attractions.\n" +
-//       '\n' +
-//       'The busiest times to visit are spring break and summer although there are events held year round that draw in big crowds. Notably the Balloon Festival in January, the Rockabilly Reunion in February, World Off-Road Championship Series in April, July 4th Celebration, and the Boat Parade of Lights in December. There’s always something to do and see here.',
-//   },
+export const AIRPORTS: Airport[] = [
+  {
+    icao: '7F7',
+    name: 'Clifton Municipal Airport/Isenhower Field',
+    city: 'Clifton',
+    state: 'TX',
+    elevation: 760,
+    latitude: 31.8171333,
+    longitude: -97.5695694,
+    runways: [
+      {
+        id: 88,
+        runway_id: '14/32',
+        length: 3000,
+        width: 50,
+        surface: 'Asphalt',
+      },
+    ],
+    frequencies: [{ type: 'CTAF/UNICOM', mhz: '122.8' }],
+    approaches: [], // No published instrument approaches at 7F7
+    youtube: [
+      {
+        title:
+          'Clifton Municipal Airport (7F7) | This Small Texas Airport Surprised Us',
+        url: 'https://youtu.be/A4dGKUDBZZ0',
+        date: '1/2/2026',
+      },
+    ],
+    summary:
+      "Join us as we fly into idyllic Clifton Municipal Airport (7F7) in Bosque County, Clifton, Texas. We step inside the comfy pilot's lounge, grab the crew car and get a bite to eat in town while catching a glimpse of the downtown Clifton. We didn't stay for long but we share the most important information you need to know for your stop here! \n" +
+      '\n' +
+      'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
+    transientParking:
+      'There is plenty of transient parking. Parking can be found on the southside of the northern most hangars and near the fuel island. ',
+    museum: '',
+    terminalBuilding: '',
+    additionalInfo:
+      'Clifton is known as the Norwegian Capital of Texas and has an incredible art scene. A few of the downtown restaurants also have live music in the evenings. The downtown area has a few shops and galleries. \n' +
+      '\n' +
+      'Otherwise take a drive though town, enjoy the scenic landscape and cross over the North Bosque River next to the 1884 Whipple Truss Bridge: https://www.texasescapes.com/CentralTexasTownsNorth/CliftonTexas/Whipple-Truss-Bridge-Clifton-Texas.htm\n' +
+      '\n' +
+      'This was a great stop to refuel and recharge. Clifton Aero could not have been nicer. And the cheap fuel was a plus! We highly recommend Clifton Municipal Airport as a fuel stop while in central Texas. \n',
+    fuel: 'Self service fuel is available west of the runway midfield.',
+    restrooms: 'Restrooms are located within the Pilot’s Lounge.  ',
+    transportation:
+      'Courtesy cars are available. We highly recommend taking the courtesy car into town to grab a bite to eat and check out the vibrant art scene. ',
+    food: 'Downtown Clifton has quite a few restaurant options to choose from. Check out Olaf’s for steak, Breaking Bread Bakery & Deli for sandwiches and China Wok. Bunkhouse BBQ and Johnny’s Place is a little farther south but still close enough for a quick stop. ',
+    fbo: 'Clifton Aero is the FBO on field and they’re fantastic. They provided a large courtesy car for our group and ensured we didn’t need any other services. If you need anything during your stop do not hesitate to ask! ',
+  },
+  {
+    icao: 'KTUS',
+    name: 'Tucson International Airport',
+    city: 'Tucson',
+    state: 'AZ',
+    elevation: 2643,
+    latitude: 32.117,
+    longitude: -110.942,
+    runways: [
+      {
+        id: 87,
+        runway_id: '12/30',
+        length: 10996,
+        width: 150,
+        surface: 'Asphalt/Grooved',
+      },
+      {
+        id: 86,
+        runway_id: '4/22',
+        length: 7000,
+        width: 150,
+        surface: 'Asphalt/Grooved',
+      },
+    ],
+    frequencies: [
+      { type: 'ATIS', mhz: '123.8' },
+      { type: 'UNICOM', mhz: '122.95' },
+      { type: 'Clearance Delivery', mhz: '126.65' },
+      { type: 'Ground', mhz: '124.4' },
+      { type: 'Tower', mhz: '118.30' },
+      { type: 'Tower', mhz: '119.00' },
+      { type: 'Approach/Departure', mhz: '119.40' },
+      { type: 'Approach/Departure', mhz: '125.10' },
+    ],
+    approaches: [
+      {
+        runway: '12',
+        type: 'ILS/DME',
+        name: 'ILS OR LOC RWY 12',
+      },
+      {
+        runway: '12',
+        type: 'RNAV (RNP)',
+        name: 'RNAV (RNP) Y RWY 12',
+      },
+      {
+        runway: '12',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 12',
+      },
+      {
+        runway: '12',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) Z RWY 12',
+      },
+      {
+        runway: '30',
+        type: 'RNAV (RNP)',
+        name: 'RNAV (RNP) Y RWY 30',
+      },
+      {
+        runway: '30',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 30',
+      },
+      {
+        runway: '30',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) Z RWY 30',
+      },
+      {
+        runway: '12',
+        type: 'VOR/TACAN',
+        name: 'VOR OR TACAN RWY 12',
+      },
+      {
+        runway: '30',
+        type: 'VOR/TACAN',
+        name: 'VOR OR TACAN RWY 30',
+      },
+    ],
+    youtube: [
+      {
+        title:
+          'Tucson International Airport (KTUS) | This Turned Into Something Way Bigger Than Planned',
+        url: 'https://youtu.be/qekeeuAH210',
+        date: '12/26/2025',
+      },
+    ],
+    summary:
+      'Join us as we fly into bustling Tucson International Airport (KTUS) and airport #100 for us! We visit Million Air FBO, get a behind the scenes tour of the 390th Museum at the Pima Air & Space Museum and try to get a glimpse of Davis Monthan from the ground and from above. \n' +
+      'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
+    transientParking:
+      'You won’t find any transient parking at Tucson International Airport. There are four FBOs on field to choose from; Atlantic Aviation TUS, Executive Air Tucson, Million Air Tucson and Tucson Jet Center.',
+    museum:
+      'Pima Air and Space Museum was a bucket list museum for us and we are so glad we finally got to visit! Seeing the Peacemaker, Phillipine Mars, SOFIA, and the finally a C141 was incredible!  \n' +
+      '\n' +
+      'The 390th Memorial Museum was the highlight of the day with a beautifully restored B-17 and a masterfully impactful tribute to the men who sacrificed their lives for our country. To those brave men, we are ever so grateful, we salute you.',
+    terminalBuilding: '',
+    additionalInfo: '',
+    fuel: 'Full service fuel is provided by your FBO of choice. ',
+    restrooms: 'Restrooms are located within each of the FBOs. ',
+    transportation:
+      'Crew cars are available with a 2 hour limit. A rental car for longer stays can be arranged with your FBO of choice. If handling your own rental, pickups are located at the east end of the Airport Terminal. Rideshare is also available, just be sure that your pickup spot reflects your FBO and not the main commercial terminal.',
+    food: 'Head downtown for the most diverse food options in Tucson. You can’t go wrong with either El Charro Café (home of the chimichanga) or Guadalajara Grill. But be sure to try the Sonoran hot dog. The best place to get one of these hot dogs is hotly contested but top contenders are El Sinaloense, Ruiz on the 6th and BK.',
+    fbo:
+      'Million Air Tucson was our FBO of choice. The service was warm, friendly and professional. The main lounge has plenty of seating with views out onto the ramp, coffee, soda and water. The Pilot’s Lounge has comfy seating, two Quiet Rooms, flight planning stations, snacks, water and a microwave. A large Conference Room is also available.\n' +
+      '\n' +
+      'Breakdown of fees for our Piper Arrow III for DECEMBER 2025 (2 Night Stay) \n' +
+      '$0 Ramp Fee Night 1 (fee Waived with 35 gal minimum fuel purchase)\n' +
+      '$35 Ramp Fee Night 2 (@$50/night w/ 30% discount)\n' +
+      '$256.50 Avgas (30 gallons @ $8.55/gal) \n' +
+      '$291.50 TOTAL\n' +
+      '\n' +
+      'We enjoyed the hospitality at Million Air TUS and we will continue to make this a stop on any of our trips east. ',
+  },
+  {
+    icao: 'KUDD',
+    name: 'Bermuda Dunes Airport',
+    city: 'Bermuda Dunes',
+    state: 'CA',
+    elevation: 73,
+    latitude: 33.7484,
+    longitude: -116.2748,
+    runways: [
+      {
+        id: 85,
+        runway_id: '10/28',
+        length: 5002,
+        width: 70,
+        surface: 'Asphalt',
+      },
+    ],
+    frequencies: [
+      { type: 'CTAF/UNICOM', mhz: '122.8' },
+      { type: 'APP/DEP', mhz: '135.275' },
+    ],
+    approaches: [
+      {
+        runway: '10',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 10',
+      },
+      {
+        runway: '28',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 28',
+      },
+      {
+        runway: 'CIRCLING',
+        type: 'VOR',
+        name: 'VOR-C',
+      },
+    ],
+    youtube: [
+      {
+        title:
+          'Bermuda Dunes Airport (KUDD) | THIS is Why Bermuda Dunes Really is A Desert Oasis',
+        url: 'https://youtu.be/mCoTYR4JPhk',
+        date: '12/19/2025',
+      },
+    ],
+    summary:
+      'Join us as we fly out Piper Arrow into swanky Bermuda Dunes Airport (KUDD) in the Coachella Valley. We check out Crown Aero’s super cool décor, make a slight departure from our diet at a local upscale deli and find pink flamingos at a desert oasis. \n' +
+      '\n' +
+      'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
+    transientParking:
+      'You won’t find any transient parking at KUDD. Crown Aero is the FBO on site and they are fantastic.',
+    fuel: 'Full service fuel is provided by Crown Aero, soon to be Dunes Air. Please note there is no self-serve fuel at this airport.',
+    restrooms: 'Restrooms are located within the FBO.',
+    transportation:
+      'Crew cars are available with a 2 hour limit. A rental car for longer stays can be arranged with the FBO. Rideshare may not be reliable in the area.',
+    food:
+      'You’ll find plenty of food options within 5 miles of the airport. Crown Aero suggested TKB Bakery &' +
+      ' Deli and it was delicious. The menu varied from smash burgers to hot and cold sandwiches. You’ll also find a bakery case and café offering coffee and tea drinks and milkshakes. It does tend to get busy during lunchtime and many people order ahead of time for pickup. Parking is plentiful and the outdoor seating is great during the spring and late fall.',
+    fbo:
+      'The FBO is located south of the approach end of RWY 28. The ramp is largely reserved for the bigger jets. Smaller GA will be placed east of the Crown Aero building and hangar. Tie down spots all have chains but its best to bring your own tie downs. The FBO is midcentury modern themed and tastefully done. You’ll find outdoor patio seating overlooking the ramp, a main lobby with seating, and two separate lounges for passengers and crew. Water, coffee and light snacks are available. \n' +
+      '\n' +
+      'Breakdown of fees for our Piper Arrow III for DECEMBER 2025 (3 Hour Stay) \n' +
+      '$0 Handling Fee (fee Waived with 20 gal minimum fuel purchase)\n' +
+      '$10 Facility Fee\n' +
+      '$139.80 Avgas (20 gallons @ $6.99/gal) \n' +
+      '$149.80 TOTAL',
+    additionalInfo:
+      'Whether you’re stopping for a quick refuel or staying for a festival, Bermuda Dunes Airport is a great stop. It feels like a small airport but has full airport amenities thanks to Crown Aero. \n' +
+      '\n' +
+      'NOTE: Crown Aero is set to change to Dunes Air in the coming months. It is our understanding that the services will remain the same and only the name will change. If you’re looking to get specific services at Bermuda Dunes Airport please call before arriving to confirm availability. \n' +
+      '\n' +
+      'For a cool article on the J.W. Marriott Desert Springs Resort check out this article by SF Gate: \n' +
+      'https://www.sfgate.com/travel/article/jw-marriott-mega-lake-with-flamingos-calif-desert-19372124.php',
+  },
+  {
+    icao: 'KHII',
+    name: 'Lake Havasu City Airport',
+    city: 'Lake Havasu City',
+    state: 'AZ',
+    elevation: 783,
+    latitude: 34.5711,
+    longitude: -114.3583,
+    runways: [
+      {
+        id: 84,
+        runway_id: '14/32',
+        length: 8000,
+        width: 100,
+        surface: 'Asphalt',
+      },
+    ],
+    frequencies: [
+      { type: 'ATIS', mhz: '120.575' },
+      { type: 'TOWER', mhz: '118.3' },
+      { type: 'GROUND', mhz: '121.7' },
+      { type: 'CLEARANCE', mhz: '125.8' },
+    ],
+    approaches: [
+      {
+        runway: '14',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 14',
+      },
+      {
+        runway: '32',
+        type: 'RNAV (GPS)',
+        name: 'RNAV (GPS) RWY 32',
+      },
+      {
+        runway: 'CIRCLING',
+        type: 'VOR',
+        name: 'VOR-A',
+      },
+    ],
+    youtube: [
+      {
+        title:
+          'Lake Havasu City Airport (KHII) | The Small Desert Town with An 8000ft Runway',
+        url: 'https://youtu.be/gsDbuPiSaV8',
+        date: '12/5/2025',
+      },
+    ],
+
+    summary:
+      "Fly with us into Lake Havasu City Airport Municipal (KHII) in our Piper Arrow. We'll take you through the brand new Velocity FBO facilities, reveal a hidden gem for transient parking that every pilot needs to know about, and grab lunch at the legendary Hangar 24 brewery restaurant right on the airport grounds. And don’t miss the stunning tail cam departure footage over the Lake Havasu desert landscape that you simply cannot miss.\n" +
+      '\n' +
+      'Join us on Patreon for behind the scenes content: https://www.patreon.com/OutsideTheCockpit',
+    transientParking:
+      'Transient parking is located in north of the Terminal. Spots are clearly marked. All spots have tie down' +
+      ' chains. Fees can be paid at the neon “Transient Parking” sign or can be paid online via the QR code.' +
+      ' Covered parking and hangar parking for small GA planes are available with reservations online. Overnight fees for uncovered spots are $14/night.',
+    fbo: 'Velocity FBO is newish to the airport. Velocity has taken over Desert Air (adjacent to Hangar 24) and Havasu Air Center (northern most FBO). We visited Velocity North but did not use their services and we were wowed. There was a nice private Pilots Lounge with flight planning area, quiet rooms and a theater. The FBO has an assortment of coffee, drinks and snacks. Velocity North appears to service the larges GA planes and jets at Havasu. Service is friendly and FBO has a warm and elegant vibe. We will be back!',
+    fuel: 'Self-serve fuel is located off of Taxiway B3, follow it west until you see the arrows directing you around the fuel pump. Fuel is reasonably priced here and easy to get in and out. Full service fuel is also available through Velocity FBO, call the phone number on the posted signs for fuel service.',
+    restrooms:
+      'Restrooms are within Hangar 24, Velocity FBO North and South. Public restrooms are marked with giant red signs. From transient parking head north past Hangar24 and the FBO, cross the walking bridge and the restrooms will be on the other side.',
+    transportation:
+      'Velocity FBO does have crew cars with a limit on a first come basis. For longer stays please contact Velocity FBO to set up a car rental. Avis is located on field at the Terminal Building. Enterprise rentals can be arranged through Velocity. Rideshare service is unreliable here.',
+    food: 'Hangar 24 is the restaurant on field. There is limited uncovered outdoor seating with a limited view of the ramp and runway. Indoor seating is plentiful but the restaurant does fill up fast. Order at the bar, take a seat and wait for your food to arrive. Food ranges from burgers and salads to wraps and bowls. This is a brewery and if you’re staying overnight, check out their current offerings.',
+    terminalBuilding:
+      'The Terminal Building contains the Airport Admin Offices, Avis Rentals and a Military Lounge. Typically closed on the weekends and holidays.',
+    additionalInfo:
+      'Lake Havasu State Park is about 15 minutes south of the airport. Lake Havasu is a massive reservoir on the Colorado River, created by the Parker Dam. It stretches 45 miles long and holds enough water to cover the entire state of Pennsylvania one foot deep.\n' +
+      '\n' +
+      "Lake Havasu City is home to the actual London Bridge, which was purchased from the City of London in 1968 for $2.4 million and reconstructed brick-by-brick in the Arizona desert. It's now one of Arizona's top tourist attractions.\n" +
+      '\n' +
+      'The busiest times to visit are spring break and summer although there are events held year round that draw in big crowds. Notably the Balloon Festival in January, the Rockabilly Reunion in February, World Off-Road Championship Series in April, July 4th Celebration, and the Boat Parade of Lights in December. There’s always something to do and see here.',
+  },
+];
 //   {
 //     icao: 'KSNA',
 //     name: 'John Wayne Airport',
