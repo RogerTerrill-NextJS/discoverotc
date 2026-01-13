@@ -1,5 +1,6 @@
 export interface Runway {
-  id: string;
+  id: number;
+  runway_id: string;
   length: number; // in feet
   width: number; // in feet
   surface: string;

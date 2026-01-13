@@ -112,20 +112,6 @@ export default function AirportEditor({
     }
   }
 
-  async function testUpdateAirport() {
-    const response = await fetch('/api/admin/airports/7F7', {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'Clifton Municipal Airport Updated',
-        summary: 'Updated summary from client',
-      }),
-    });
-
-    const data = await response.json();
-    console.log(data);
-  }
-
   return (
     <div className='max-w-5xl mx-auto space-y-8'>
       {/* Core Airport Info */}
@@ -273,7 +259,7 @@ export default function AirportEditor({
       {/* Actions */}
       <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4'>
         <button
-          onClick={testUpdateAirport}
+          onClick={saveAirport}
           disabled={saving}
           className='bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 transition'
         >
