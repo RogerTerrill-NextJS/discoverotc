@@ -78,6 +78,8 @@ export default function AirportEditor({
     initialData ?? { icao: '', name: '', city: '', state: '' },
   );
 
+  const isNew = !initialData; // true if this is a new airport, false if editing
+
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
@@ -90,10 +92,16 @@ export default function AirportEditor({
     setMessage(null);
 
     try {
-      const res = await fetch(`/api/admin/airports/${form.icao}`, {
-        method: 'PATCH', // use PATCH instead of POST
+      const url = isNew
+        ? '/api/admin/airports/new' // POST for new airport
+        : `/api/admin/airports/${form.icao}`; // PATCH for existing airport
+
+      const method = isNew ? 'POST' : 'PATCH';
+
+      const res = await fetch(url, {
+        method,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form), // can later optimize to only changed fields
+        body: JSON.stringify(form),
       });
 
       if (!res.ok) {
