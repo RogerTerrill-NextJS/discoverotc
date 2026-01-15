@@ -1,7 +1,7 @@
-import { createSupabaseServerClient } from './supabaseServer';
+import { createSupabaseReadonlyClient } from '@/lib/supabaseReadOnly';
 
 export async function getAllAirports() {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseReadonlyClient();
 
   const { data, error } = await supabase.from('airports').select('*');
 
@@ -14,7 +14,7 @@ export async function getAllAirports() {
 }
 
 export async function getFilteredAirports(search: string) {
-  const supabase = await createSupabaseServerClient();
+  const supabase = await createSupabaseReadonlyClient();
 
   let query = supabase.from('airports').select('*');
 
