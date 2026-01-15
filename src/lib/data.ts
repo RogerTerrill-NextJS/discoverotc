@@ -1,23 +1,34 @@
-import { AIRPORTS } from '@/data/airports';
+import { createSupabaseServerClient } from './supabaseServer';
 
-export function getAllAirports() {
-  return AIRPORTS;
+export async function getAllAirports() {
+  const supabase = await createSupabaseServerClient();
+
+  const { data, error } = await supabase.from('airports').select('*');
+
+  if (error) {
+    console.error('Error fetching airports:', error);
+    return [];
+  }
+
+  return data;
 }
 
-export function getAirportByICAO(icao: string) {
-  return AIRPORTS.find((airport) => airport.icao === icao);
-}
+export async function getFilteredAirports(search: string) {
+  const supabase = await createSupabaseServerClient();
 
-export function getFilteredAirports(search: string) {
-  if (!search) return AIRPORTS;
+  let query = supabase.from('airports').select('*');
 
-  const s = search.toLowerCase();
+  if (search) {
+    const s = search.toLowerCase();
+    query = query.or(`name.ilike.%${s}%,city.ilike.%${s}%,icao.ilike.%${s}%`);
+  }
 
-  return AIRPORTS.filter((airport) => {
-    return (
-      airport.name.toLowerCase().includes(s) ||
-      airport.city.toLowerCase().includes(s) ||
-      airport.icao.toLowerCase().includes(s)
-    );
-  });
+  const { data, error } = await query;
+
+  if (error) {
+    console.error('Error fetching filtered airports:', error);
+    return [];
+  }
+
+  return data;
 }
