@@ -1,5 +1,5 @@
 import { createSupabaseServerClient } from '@/lib/supabaseServer';
-import AirportEditor from '../AirportEditor';
+import AirportEditor from '../../../../components/AirportEditor';
 
 export default async function EditAirportPage({
   params,
@@ -22,6 +22,17 @@ export default async function EditAirportPage({
     );
   }
 
+  // ✅ Fetch runways
+  const { data: runways, error: runwayError } = await supabase
+    .from('runways')
+    .select('*')
+    .eq('airport_id', airport.id)
+    .order('id');
+
+  if (runwayError) {
+    console.error('Error fetching runways:', runwayError);
+  }
+
   return (
     <div className='max-w-4xl mx-auto p-6'>
       <h1 className='text-3xl font-bold mb-4 text-blue-600'>
@@ -33,7 +44,7 @@ export default async function EditAirportPage({
       </p>
 
       <div className='bg-white shadow-md rounded-lg p-6'>
-        <AirportEditor initialData={airport} />
+        <AirportEditor initialData={airport} initialRunways={runways ?? []} />
       </div>
     </div>
   );

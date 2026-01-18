@@ -2,6 +2,18 @@
 
 import { useState } from 'react';
 
+type Runway = {
+  id: number;
+  airport_id: number;
+  runway_id: string;
+  length?: number;
+  width?: number;
+  surface?: string;
+  lighting?: string;
+  ils?: boolean;
+  heading?: number;
+};
+
 type AirportFormData = {
   icao: string;
   name: string;
@@ -71,12 +83,15 @@ function TextArea({
 
 export default function AirportEditor({
   initialData,
+  initialRunways = [],
 }: {
   initialData?: AirportFormData;
+  initialRunways?: Runway[];
 }) {
   const [form, setForm] = useState<AirportFormData>(
     initialData ?? { icao: '', name: '', city: '', state: '' },
   );
+  const [runways, setRunways] = useState<Runway[]>(initialRunways);
 
   const isNew = !initialData; // true if this is a new airport, false if editing
 
@@ -175,6 +190,34 @@ export default function AirportEditor({
             onChange={(v) => updateField('diagramUrl', v)}
           />
         </div>
+      </section>
+
+      {/* Runways Section */}
+      <section className='bg-white border border-gray-200 rounded-lg p-6 shadow-sm'>
+        <h2 className='text-xl font-semibold text-gray-800 mb-4'>Runways</h2>
+
+        {runways.length === 0 ? (
+          <p className='text-gray-500'>No runways added yet.</p>
+        ) : (
+          <div className='space-y-4'>
+            {runways.map((r) => (
+              <div
+                key={r.id}
+                className='border rounded-md p-4 flex flex-col gap-1 bg-gray-50'
+              >
+                <div className='font-medium'>
+                  {r.runway_id || 'Unnamed Runway'}
+                </div>
+                <div className='text-sm text-gray-600'>
+                  {r.length} ft × {r.width} ft
+                </div>
+                <div className='text-sm text-gray-600'>
+                  Surface: {r.surface}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Description Section */}

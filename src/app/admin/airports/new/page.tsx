@@ -1,4 +1,4 @@
-import AirportEditor from '../AirportEditor';
+import AirportEditor from '../../../../components/AirportEditor';
 
 export default function NewAirportPage() {
   return (
