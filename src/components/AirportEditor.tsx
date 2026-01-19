@@ -2,16 +2,13 @@
 
 import { useState } from 'react';
 
-type Runway = {
-  id: number;
-  airport_id: number;
+export type Runway = {
+  id?: number; // optional for new runways
+  airport_id?: number;
+  length: number;
+  width: number;
+  surface: string;
   runway_id: string;
-  length?: number;
-  width?: number;
-  surface?: string;
-  lighting?: string;
-  ils?: boolean;
-  heading?: number;
 };
 
 type AirportFormData = {
@@ -100,6 +97,18 @@ export default function AirportEditor({
 
   function updateField(field: keyof AirportFormData, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
+  }
+
+  function updateRunway<T extends keyof Runway>(
+    index: number,
+    field: T,
+    value: Runway[T],
+  ) {
+    setRunways((prev) => {
+      const copy = [...prev];
+      copy[index] = { ...copy[index], [field]: value };
+      return copy;
+    });
   }
 
   async function saveAirport() {
@@ -195,29 +204,56 @@ export default function AirportEditor({
       {/* Runways Section */}
       <section className='bg-white border border-gray-200 rounded-lg p-6 shadow-sm'>
         <h2 className='text-xl font-semibold text-gray-800 mb-4'>Runways</h2>
+        <button
+          type='button'
+          onClick={() =>
+            setRunways((prev) => [
+              ...prev,
+              {
+                runway_id: '',
+                length: 0,
+                width: 0,
+                surface: '',
+              },
+            ])
+          }
+          className='px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 text-sm'
+        >
+          + Add Runway
+        </button>
 
-        {runways.length === 0 ? (
-          <p className='text-gray-500'>No runways added yet.</p>
-        ) : (
-          <div className='space-y-4'>
-            {runways.map((r) => (
-              <div
-                key={r.id}
-                className='border rounded-md p-4 flex flex-col gap-1 bg-gray-50'
-              >
-                <div className='font-medium'>
-                  {r.runway_id || 'Unnamed Runway'}
-                </div>
-                <div className='text-sm text-gray-600'>
-                  {r.length} ft × {r.width} ft
-                </div>
-                <div className='text-sm text-gray-600'>
-                  Surface: {r.surface}
-                </div>
-              </div>
-            ))}
+        {runways.map((runway, index) => (
+          <div
+            key={index}
+            className='border rounded-md p-4 bg-gray-50 space-y-3'
+          >
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+              <TextInput
+                label='Runway ID'
+                value={runway.runway_id}
+                onChange={(v) => updateRunway(index, 'runway_id', v)}
+              />
+
+              <TextInput
+                label='Length (ft)'
+                value={runway.length}
+                onChange={(v) => updateRunway(index, 'length', Number(v))}
+              />
+
+              <TextInput
+                label='Width (ft)'
+                value={runway.width}
+                onChange={(v) => updateRunway(index, 'width', Number(v))}
+              />
+
+              <TextInput
+                label='Surface'
+                value={runway.surface}
+                onChange={(v) => updateRunway(index, 'surface', v)}
+              />
+            </div>
           </div>
-        )}
+        ))}
       </section>
 
       {/* Description Section */}
