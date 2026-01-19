@@ -223,11 +223,17 @@ export default function AirportEditor({
         </button>
 
         {runways.map((runway, index) => (
-          <div
-            key={index}
-            className='border rounded-md p-4 bg-gray-50 space-y-3'
-          >
+          <div key={index} className='border rounded p-4 mb-4 relative'>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-3'>
+              <button
+                type='button'
+                onClick={() => {
+                  setRunways((prev) => prev.filter((_, i) => i !== index));
+                }}
+                className='absolute top-2 right-2 text-red-600 hover:text-red-800 text-lg'
+              >
+                ✕
+              </button>
               <TextInput
                 label='Runway ID'
                 value={runway.runway_id}
