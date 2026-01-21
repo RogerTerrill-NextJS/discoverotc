@@ -89,6 +89,7 @@ export default function AirportEditor({
     initialData ?? { icao: '', name: '', city: '', state: '' },
   );
   const [runways, setRunways] = useState<Runway[]>(initialRunways);
+  const [deletedRunwayIds, setDeletedRunwayIds] = useState<number[]>([]);
 
   const isNew = !initialData; // true if this is a new airport, false if editing
 
@@ -111,15 +112,37 @@ export default function AirportEditor({
     });
   }
 
+  async function removeRunway(index: number) {
+    const runway = runways[index];
+
+    // Remove from UI immediately
+    setRunways((prev) => prev.filter((_, i) => i !== index));
+
+    // If it's a new runway (no ID), stop here
+    if (!runway.id) return;
+
+    try {
+      const res = await fetch(`/api/admin/runways/${runway.id}`, {
+        method: 'DELETE',
+      });
+
+      if (!res.ok) {
+        console.error('Failed to delete runway from DB');
+      }
+    } catch (err) {
+      console.error('Network error deleting runway:', err);
+    }
+  }
+
   async function saveAirport() {
     setSaving(true);
     setMessage(null);
 
     try {
+      // --- Save the airport itself ---
       const url = isNew
-        ? '/api/admin/airports/new' // POST for new airport
-        : `/api/admin/airports/${form.icao}`; // PATCH for existing airport
-
+        ? '/api/admin/airports/new'
+        : `/api/admin/airports/${form.icao}`;
       const method = isNew ? 'POST' : 'PATCH';
 
       const res = await fetch(url, {
@@ -131,14 +154,55 @@ export default function AirportEditor({
       if (!res.ok) {
         const errData = await res.json();
         setMessage(`❌ Failed to save airport: ${errData.message}`);
-      } else {
-        const data = await res.json();
-        setMessage('✅ Airport saved successfully');
-        console.log('Updated airport:', data);
+        return;
       }
+
+      const airportData = await res.json();
+      const airportId = airportData.data?.id ?? airportData.id; // get the DB ID
+
+      // --- Save runways ---
+      // Separate new runways vs existing runways
+      const newRunways = runways.filter((r) => !r.id);
+      const existingRunways = runways.filter((r) => r.id);
+
+      // 1️⃣ Insert new runways
+      if (newRunways.length > 0) {
+        await fetch('/api/admin/runways', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            airport_id: airportId,
+            runways: newRunways,
+          }),
+        });
+      }
+
+      // 2️⃣ Update existing runways
+      for (const r of existingRunways) {
+        await fetch(`/api/admin/runways/${r.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(r),
+        });
+      }
+
+      // 3️⃣ Delete removed runways
+      if (deletedRunwayIds.length > 0) {
+        await fetch('/api/admin/runways/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ids: deletedRunwayIds }),
+        });
+      }
+
+      setMessage('✅ Airport and runways saved successfully');
+      console.log('Saved airport and runways');
+
+      // Clear deleted runways list
+      setDeletedRunwayIds([]);
     } catch (err) {
-      console.error('Error saving airport:', err);
-      setMessage('❌ Failed to save airport (network error)');
+      console.error('Error saving airport and runways:', err);
+      setMessage('❌ Failed to save airport/runways (network error)');
     } finally {
       setSaving(false);
     }
@@ -257,6 +321,14 @@ export default function AirportEditor({
                 value={runway.surface}
                 onChange={(v) => updateRunway(index, 'surface', v)}
               />
+              {/* Remove button */}
+              <button
+                type='button'
+                onClick={() => removeRunway(index)}
+                className='text-red-600 hover:underline text-sm'
+              >
+                Remove
+              </button>
             </div>
           </div>
         ))}
