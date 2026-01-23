@@ -115,11 +115,14 @@ export default function AirportEditor({
   async function removeRunway(index: number) {
     const runway = runways[index];
 
-    // Remove from UI immediately
-    setRunways((prev) => prev.filter((_, i) => i !== index));
+    // ✅ New / unsaved runway → safe to remove locally
+    if (!runway.id) {
+      setRunways((prev) => prev.filter((_, i) => i !== index));
+      return;
+    }
 
-    // If it's a new runway (no ID), stop here
-    if (!runway.id) return;
+    const confirmed = confirm('Delete this runway?');
+    if (!confirmed) return;
 
     try {
       const res = await fetch(`/api/admin/runways/${runway.id}`, {
@@ -128,9 +131,15 @@ export default function AirportEditor({
 
       if (!res.ok) {
         console.error('Failed to delete runway from DB');
+        alert('Failed to delete runway');
+        return;
       }
+
+      // ✅ Only update UI AFTER DB success
+      setRunways((prev) => prev.filter((_, i) => i !== index));
     } catch (err) {
       console.error('Network error deleting runway:', err);
+      alert('Network error deleting runway');
     }
   }
 
