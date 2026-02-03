@@ -81,9 +81,11 @@ function TextArea({
 export default function AirportEditor({
   initialData,
   initialRunways = [],
+  airportId,
 }: {
   initialData?: AirportFormData;
   initialRunways?: Runway[];
+  airportId?: number;
 }) {
   const [form, setForm] = useState<AirportFormData>(
     initialData ?? { icao: '', name: '', city: '', state: '' },
