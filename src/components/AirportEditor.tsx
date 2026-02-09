@@ -169,6 +169,14 @@ export default function AirportEditor({
 
       const airportData = await res.json();
       const airportId = airportData.data?.id ?? airportData.id; // get the DB ID
+      if (!airportId) {
+        console.error(
+          'Airport was saved but no airport ID was returned',
+          airportData,
+        );
+        setMessage('❌ Airport saved, but failed to retrieve airport ID.');
+        return;
+      }
 
       // --- Save runways ---
       // Separate new runways vs existing runways

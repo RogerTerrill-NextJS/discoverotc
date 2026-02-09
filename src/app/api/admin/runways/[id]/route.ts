@@ -49,7 +49,7 @@ export async function PATCH(
     const runwayId = Number((await params).id);
     const body = await req.json();
 
-    if (!runwayId) {
+    if (Number.isNaN(runwayId)) {
       return NextResponse.json(
         { message: 'Invalid runway ID' },
         { status: 400 },
