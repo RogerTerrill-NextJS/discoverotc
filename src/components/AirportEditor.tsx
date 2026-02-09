@@ -91,7 +91,6 @@ export default function AirportEditor({
     initialData ?? { icao: '', name: '', city: '', state: '' },
   );
   const [runways, setRunways] = useState<Runway[]>(initialRunways);
-  const [deletedRunwayIds, setDeletedRunwayIds] = useState<number[]>([]);
 
   const isNew = !initialData; // true if this is a new airport, false if editing
 
@@ -197,20 +196,10 @@ export default function AirportEditor({
         });
       }
 
-      // 3️⃣ Delete removed runways
-      if (deletedRunwayIds.length > 0) {
-        await fetch('/api/admin/runways/delete', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ids: deletedRunwayIds }),
-        });
-      }
-
       setMessage('✅ Airport and runways saved successfully');
       console.log('Saved airport and runways');
 
       // Clear deleted runways list
-      setDeletedRunwayIds([]);
     } catch (err) {
       console.error('Error saving airport and runways:', err);
       setMessage('❌ Failed to save airport/runways (network error)');
