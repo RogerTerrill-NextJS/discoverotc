@@ -70,11 +70,9 @@ export default async function AirportDetails({
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
         {/* Left Column */}
         <div className='lg:col-span-2 space-y-8'>
-          {airportWithRelations.youtube.length > 0 && (
-            <YoutubeVideo
-              videoId={getYoutubeId(airportWithRelations.youtube[0].url)}
-            />
-          )}
+          <YoutubeVideo
+            videoId={getYoutubeId(airportWithRelations.featured_video_url)}
+          />
           <InfoSection title='Summary' airport={airportWithRelations} />
           <InfoSection
             title='Transient Parking'

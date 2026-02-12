@@ -9,6 +9,7 @@ export const AIRPORTS: Airport[] = [
     elevation: 760,
     latitude: 31.8171333,
     longitude: -97.5695694,
+    featuredVideoId: 'https://youtu.be/A4dGKUDBZZ0',
     runways: [
       {
         id: 88,
@@ -57,6 +58,7 @@ export const AIRPORTS: Airport[] = [
     elevation: 2643,
     latitude: 32.117,
     longitude: -110.942,
+    featuredVideoId: 'https://youtu.be/qekeeuAH210',
     runways: [
       {
         id: 87,
@@ -173,6 +175,7 @@ export const AIRPORTS: Airport[] = [
     elevation: 73,
     latitude: 33.7484,
     longitude: -116.2748,
+    featuredVideoId: 'https://youtu.be/mCoTYR4JPhk',
     runways: [
       {
         id: 85,
@@ -248,6 +251,7 @@ export const AIRPORTS: Airport[] = [
     elevation: 783,
     latitude: 34.5711,
     longitude: -114.3583,
+    featuredVideoId: 'https://youtu.be/gsDbuPiSaV8',
     runways: [
       {
         id: 84,

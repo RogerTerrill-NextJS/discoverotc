@@ -44,12 +44,13 @@ export interface Airport {
   elevation: number; // in feet
   latitude: number;
   longitude: number;
+  featuredVideoId: string;
   runways: Runway[];
   frequencies: Frequency[];
   imageUrl?: string;
   diagramUrl?: string;
   approaches?: Approach[];
-  youtube: youtubeLink[];
+  youtube?: youtubeLink[];
   summary: string;
   transientParking?: string;
   museum?: string;
