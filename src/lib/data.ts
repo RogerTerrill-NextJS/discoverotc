@@ -20,7 +20,9 @@ export async function getFilteredAirports(search: string) {
 
   if (search) {
     const s = search.toLowerCase();
-    query = query.or(`name.ilike.%${s}%,city.ilike.%${s}%,icao.ilike.%${s}%`);
+    query = query.or(
+      `name.ilike.%${s}%,city.ilike.%${s}%,icao.ilike.%${s}%,state.ilike.%${s}%`,
+    );
   }
 
   const { data, error } = await query;
