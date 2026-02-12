@@ -19,7 +19,7 @@ export async function getFilteredAirports(search: string) {
   let query = supabase.from('airports').select('*');
 
   if (search) {
-    const s = search.toLowerCase();
+    const s = search.toLowerCase().trim().replace(/,/g, '');
     query = query.or(
       `name.ilike.%${s}%,city.ilike.%${s}%,icao.ilike.%${s}%,state.ilike.%${s}%`,
     );
