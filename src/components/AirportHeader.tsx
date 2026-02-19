@@ -7,7 +7,7 @@ const AirportHeader = ({ airport }: { airport: Airport }) => {
     <div className='bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-8'>
       <div className='h-48 sm:h-48 bg-slate-800 relative'>
         <Image
-          src={`/airport/${airport.icao}.jpg`}
+          src={`https://cdn.discoverotc.com/airports/${airport.icao}.jpg`}
           alt='Airport Aerial'
           width={1200}
           height={400}
