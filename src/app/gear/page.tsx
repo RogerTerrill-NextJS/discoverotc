@@ -1,4 +1,5 @@
 import { createSupabaseBrowserClient } from '@/lib/supabaseClient';
+import AffiliateCard from '@/components/AffiliateCard';
 
 export type AffiliateProduct = {
   id: number;
@@ -11,7 +12,7 @@ export type AffiliateProduct = {
 };
 
 const SECTION_LABELS: Record<string, string> = {
-  flight_planing: 'Flight Planning & Cockpit Setup',
+  flight_planning: 'Flight Planning & Cockpit Setup',
   cameras: 'Our In-Flight Camera Setup',
   power: 'Power & Charging',
   audio: 'Audio Setup',
@@ -70,26 +71,7 @@ export default async function AffiliatesPage() {
                 key={item.id}
                 className='border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow transition'
               >
-                <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3'>
-                  <div>
-                    <h3 className='text-lg font-semibold text-slate-800'>
-                      {item.title}
-                    </h3>
-
-                    <p className='text-sm text-slate-600 mt-1'>
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <a
-                    href={item.url}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className='inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition'
-                  >
-                    Visit site
-                  </a>
-                </div>
+                <AffiliateCard item={item} />
               </div>
             ))}
           </div>

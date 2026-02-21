@@ -16,7 +16,11 @@ export async function getAllAirports() {
 export async function getFilteredAirports(search: string) {
   const supabase = await createSupabaseReadonlyClient();
 
-  let query = supabase.from('airports').select('*');
+  let query = supabase
+    .from('airports')
+    .select('*')
+    .eq('active', true) // Filter: Only rows where active is true
+    .order('name', { ascending: true }); // Sort: Alphabetical by airport name
 
   if (search) {
     const s = search.toLowerCase().trim().replace(/,/g, '');
