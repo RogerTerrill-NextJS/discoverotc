@@ -45,7 +45,8 @@ export default async function AirportDetails({
   const { data: frequencies } = await supabase
     .from('frequencies')
     .select('*')
-    .eq('airport_id', airportId);
+    .eq('airport_id', airportId)
+    .order('type', { ascending: true });
 
   // 4️⃣ Fetch YouTube links
   const { data: youtube } = await supabase
@@ -98,7 +99,7 @@ export default async function AirportDetails({
           <Frequencies airport={airportWithRelations} />
           <Runways airport={airportWithRelations} />
           <AdditionalVideos airport={airportWithRelations} />
-          <LocalTime />
+          <LocalTime airport={airportWithRelations} />
         </div>
       </div>
     </div>
