@@ -13,6 +13,7 @@ import DisplayDay from '@/components/DisplayDay';
 import AdditionalVideos from '@/components/PreviousVideos';
 import YoutubeVideo from '@/components/YoutubeVideo';
 import { createSupabaseBrowserClient } from '@/lib/supabaseClient';
+import { Disclaimer } from '@/components/Disclaimer';
 
 export default async function AirportDetails({
   params,
@@ -102,6 +103,8 @@ export default async function AirportDetails({
           <LocalTime airport={airportWithRelations} />
         </div>
       </div>
+
+      <Disclaimer variant='compact' />
     </div>
   );
 }
