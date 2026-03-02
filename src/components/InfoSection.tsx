@@ -1,6 +1,6 @@
 import { Airport, DescriptionType } from '@/data/types';
 import IconComponent from '@/components/Icon';
-import { toCamelCase } from '@/lib/utils';
+import { toSnakeCase } from '@/lib/utils';
 
 type InfoSectionProps = {
   title: string;
@@ -31,7 +31,9 @@ function linkify(text: string) {
 }
 
 export default function InfoSection({ title, airport }: InfoSectionProps) {
-  const type = toCamelCase(title) as DescriptionType;
+  const type = toSnakeCase(title) as DescriptionType;
+  console.log(airport);
+  console.log(type);
 
   if (!airport?.[type]) return null;
 
