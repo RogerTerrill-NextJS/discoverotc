@@ -19,7 +19,7 @@ export const AIRPORTS: Airport[] = [
         surface: 'Asphalt',
       },
     ],
-    frequencies: [{ type: 'CTAF/UNICOM', mhz: '122.8' }],
+    frequencies: [{ type: 'CTAF/UNICOM', frequency: '122.8' }],
     approaches: [], // No published instrument approaches at 7F7
     youtube: [
       {
@@ -76,14 +76,14 @@ export const AIRPORTS: Airport[] = [
       },
     ],
     frequencies: [
-      { type: 'ATIS', mhz: '123.8' },
-      { type: 'UNICOM', mhz: '122.95' },
-      { type: 'Clearance Delivery', mhz: '126.65' },
-      { type: 'Ground', mhz: '124.4' },
-      { type: 'Tower', mhz: '118.30' },
-      { type: 'Tower', mhz: '119.00' },
-      { type: 'Approach/Departure', mhz: '119.40' },
-      { type: 'Approach/Departure', mhz: '125.10' },
+      { type: 'ATIS', frequency: '123.8' },
+      { type: 'UNICOM', frequency: '122.95' },
+      { type: 'Clearance Delivery', frequency: '126.65' },
+      { type: 'Ground', frequency: '124.4' },
+      { type: 'Tower', frequency: '118.30' },
+      { type: 'Tower', frequency: '119.00' },
+      { type: 'Approach/Departure', frequency: '119.40' },
+      { type: 'Approach/Departure', frequency: '125.10' },
     ],
     approaches: [
       {
@@ -186,8 +186,8 @@ export const AIRPORTS: Airport[] = [
       },
     ],
     frequencies: [
-      { type: 'CTAF/UNICOM', mhz: '122.8' },
-      { type: 'APP/DEP', mhz: '135.275' },
+      { type: 'CTAF/UNICOM', frequency: '122.8' },
+      { type: 'APP/DEP', frequency: '135.275' },
     ],
     approaches: [
       {
@@ -262,10 +262,10 @@ export const AIRPORTS: Airport[] = [
       },
     ],
     frequencies: [
-      { type: 'ATIS', mhz: '120.575' },
-      { type: 'TOWER', mhz: '118.3' },
-      { type: 'GROUND', mhz: '121.7' },
-      { type: 'CLEARANCE', mhz: '125.8' },
+      { type: 'ATIS', frequency: '120.575' },
+      { type: 'TOWER', frequency: '118.3' },
+      { type: 'GROUND', frequency: '121.7' },
+      { type: 'CLEARANCE', frequency: '125.8' },
     ],
     approaches: [
       {
@@ -344,10 +344,10 @@ export const AIRPORTS: Airport[] = [
 //       { id: '02R/20L', length: 2886, width: 75, surface: 'Asphalt' },
 //     ],
 //     frequencies: [
-//       { type: 'ATIS', mhz: '126.0' },
-//       { type: 'TOWER', mhz: '120.8' },
-//       { type: 'GROUND', mhz: '121.9' },
-//       { type: 'CLEARANCE', mhz: '118.0' },
+//       { type: 'ATIS', frequency: '126.0' },
+//       { type: 'TOWER', frequency: '120.8' },
+//       { type: 'GROUND', frequency: '121.9' },
+//       { type: 'CLEARANCE', frequency: '118.0' },
 //     ],
 //     approaches: [
 //       {
@@ -418,9 +418,9 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '13/31', length: 11702, width: 150, surface: 'Concrete' }],
 //     frequencies: [
-//       { type: 'CTAF/UNICOM', mhz: '122.7' },
-//       { type: 'ATIS', mhz: '120.05' },
-//       { type: 'APP/DEP', mhz: '120.45' },
+//       { type: 'CTAF/UNICOM', frequency: '122.7' },
+//       { type: 'ATIS', frequency: '120.05' },
+//       { type: 'APP/DEP', frequency: '120.45' },
 //     ],
 //     approaches: [
 //       {
@@ -482,10 +482,10 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '06/24', length: 4897, width: 150, surface: 'Asphalt' }],
 //     frequencies: [
-//       { type: 'ATIS', mhz: '118.15' },
-//       { type: 'TOWER', mhz: '118.6' },
-//       { type: 'GROUND', mhz: '121.7' },
-//       { type: 'CLEARANCE', mhz: '120.25' },
+//       { type: 'ATIS', frequency: '118.15' },
+//       { type: 'TOWER', frequency: '118.6' },
+//       { type: 'GROUND', frequency: '121.7' },
+//       { type: 'CLEARANCE', frequency: '120.25' },
 //     ],
 //     approaches: [
 //       {
@@ -568,9 +568,9 @@ export const AIRPORTS: Airport[] = [
 //       { id: '11/29', length: 2607, width: 50, surface: 'Turf' },
 //     ],
 //     frequencies: [
-//       { type: 'CTAF/UNICOM', mhz: '122.975' },
-//       { type: 'AWOS‑3', mhz: '124.65' },
-//       { type: 'NORCAL APPROACH/DEPARTURE', mhz: '125.1' },
+//       { type: 'CTAF/UNICOM', frequency: '122.975' },
+//       { type: 'AWOS‑3', frequency: '124.65' },
+//       { type: 'NORCAL APPROACH/DEPARTURE', frequency: '125.1' },
 //     ],
 //     approaches: [
 //       {
@@ -623,8 +623,8 @@ export const AIRPORTS: Airport[] = [
 //       { id: '08/26', length: 4100, width: 60, surface: 'Asphalt' },
 //     ],
 //     frequencies: [
-//       { type: 'CTAF/UNICOM', mhz: '122.80' },
-//       { type: 'APPROACH/DEPARTURE', mhz: '124.55' },
+//       { type: 'CTAF/UNICOM', frequency: '122.80' },
+//       { type: 'APPROACH/DEPARTURE', frequency: '124.55' },
 //     ],
 //     approaches: [
 //       {
@@ -673,12 +673,12 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '09/27', length: 5006, width: 150, surface: 'Asphalt' }],
 //     frequencies: [
-//       { type: 'TOWER', mhz: '119.87' },
-//       { type: 'APPROACH', mhz: '132.20' },
-//       { type: 'DEPARTURE', mhz: '127.30' },
-//       { type: 'ATIS', mhz: '132.02' },
-//       { type: 'UNICOM', mhz: '122.95' },
-//       { type: 'GROUND', mhz: '121.65' },
+//       { type: 'TOWER', frequency: '119.87' },
+//       { type: 'APPROACH', frequency: '132.20' },
+//       { type: 'DEPARTURE', frequency: '127.30' },
+//       { type: 'ATIS', frequency: '132.02' },
+//       { type: 'UNICOM', frequency: '122.95' },
+//       { type: 'GROUND', frequency: '121.65' },
 //     ],
 //     approaches: [
 //       { runway: '09', type: 'RNAV (GPS)', name: 'RNAV (GPS) RWY 09' },
@@ -723,7 +723,7 @@ export const AIRPORTS: Airport[] = [
 //       },
 //     ],
 //     runways: [{ id: '04/22', length: 2665, width: 60, surface: 'Asphalt' }],
-//     frequencies: [{ type: 'CTAF/UNICOM', mhz: '122.90' }],
+//     frequencies: [{ type: 'CTAF/UNICOM', frequency: '122.90' }],
 //     approaches: [
 //       {
 //         runway: '—',
@@ -772,13 +772,13 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '06/24', length: 10000, width: 200, surface: 'Concrete' }],
 //     frequencies: [
-//       { type: 'ATIS', mhz: '124.175' },
-//       { type: 'TOWER', mhz: '119.45' },
-//       { type: 'GROUND', mhz: '121.8' },
-//       { type: 'CTAF/UNICOM', mhz: '122.975' },
-//       { type: 'APPROACH/DEPARTURE', mhz: '127.0' },
-//       { type: 'APPROACH/DEPARTURE', mhz: '134.0' },
-//       { type: 'APPROACH/DEPARTURE', mhz: '135.4' },
+//       { type: 'ATIS', frequency: '124.175' },
+//       { type: 'TOWER', frequency: '119.45' },
+//       { type: 'GROUND', frequency: '121.8' },
+//       { type: 'CTAF/UNICOM', frequency: '122.975' },
+//       { type: 'APPROACH/DEPARTURE', frequency: '127.0' },
+//       { type: 'APPROACH/DEPARTURE', frequency: '134.0' },
+//       { type: 'APPROACH/DEPARTURE', frequency: '135.4' },
 //     ],
 //     approaches: [
 //       {
@@ -862,8 +862,8 @@ export const AIRPORTS: Airport[] = [
 //       { id: '16L/34R', length: 4011, width: 75, surface: 'Asphalt' },
 //     ],
 //     frequencies: [
-//       { type: 'TOWER', mhz: '119.3' },
-//       { type: 'GROUND', mhz: '121.7' },
+//       { type: 'TOWER', frequency: '119.3' },
+//       { type: 'GROUND', frequency: '121.7' },
 //     ],
 //     approaches: [
 //       {
@@ -936,11 +936,11 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '06/24', length: 7201, width: 150, surface: 'Asphalt' }],
 //     frequencies: [
-//       { type: 'ATIS', mhz: '126.30' },
-//       { type: 'TOWER', mhz: '118.525' },
-//       { type: 'GROUND', mhz: '121.7' },
-//       { type: 'CTAF/UNICOM', mhz: '122.95' },
-//       { type: 'APP/DEP (Joshua)', mhz: '126.1' },
+//       { type: 'ATIS', frequency: '126.30' },
+//       { type: 'TOWER', frequency: '118.525' },
+//       { type: 'GROUND', frequency: '121.7' },
+//       { type: 'CTAF/UNICOM', frequency: '122.95' },
+//       { type: 'APP/DEP (Joshua)', frequency: '126.1' },
 //     ],
 //     approaches: [
 //       {
@@ -993,9 +993,9 @@ export const AIRPORTS: Airport[] = [
 //     ],
 //     runways: [{ id: '18/36', length: 2160, width: 60, surface: 'Asphalt' }],
 //     frequencies: [
-//       { type: 'CTAF/UNICOM', mhz: '123.05' },
-//       { type: 'AWOS', mhz: '118.425' },
-//       { type: 'APP/DEP (SoCal)', mhz: '127.3' },
+//       { type: 'CTAF/UNICOM', frequency: '123.05' },
+//       { type: 'AWOS', frequency: '118.425' },
+//       { type: 'APP/DEP (SoCal)', frequency: '127.3' },
 //     ],
 //     approaches: [
 //       {
@@ -1042,10 +1042,10 @@ export const AIRPORTS: Airport[] = [
 //       { id: '02R/20L', length: 2886, width: 75, surface: 'Asphalt' },
 //     ],
 //     frequencies: [
-//       { type: 'ATIS', mhz: '126.0' },
-//       { type: 'TOWER', mhz: '120.8' },
-//       { type: 'GROUND', mhz: '121.9' },
-//       { type: 'CLEARANCE', mhz: '118.0' },
+//       { type: 'ATIS', frequency: '126.0' },
+//       { type: 'TOWER', frequency: '120.8' },
+//       { type: 'GROUND', frequency: '121.9' },
+//       { type: 'CLEARANCE', frequency: '118.0' },
 //     ],
 //     approaches: [
 //       {
@@ -1092,8 +1092,8 @@ export const AIRPORTS: Airport[] = [
 //   longitude: -116.2748,
 //   runways: [{ id: '10/28', length: 5002, width: 70, surface: 'Asphalt' }],
 //   frequencies: [
-//     { type: 'CTAF/UNICOM', mhz: '122.8' },
-//     { type: 'APP/DEP', mhz: '135.275' },
+//     { type: 'CTAF/UNICOM', frequency: '122.8' },
+//     { type: 'APP/DEP', frequency: '135.275' },
 //   ],
 //   approaches: [
 //     {
