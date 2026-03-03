@@ -8,7 +8,7 @@ export interface Runway {
 
 export interface Frequency {
   type: string; // e.g., TOWER, GROUND, UNICOM
-  mhz: string;
+  frequency: string;
 }
 
 export interface Approach {
