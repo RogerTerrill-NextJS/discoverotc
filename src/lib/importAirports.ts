@@ -94,7 +94,7 @@ export async function importAirports(airports: Airport[]) {
           airport.frequencies.map((f) => ({
             airport_id: airportId,
             type: f.type,
-            mhz: f.mhz,
+            mhz: f.frequency,
           })),
         );
       }
