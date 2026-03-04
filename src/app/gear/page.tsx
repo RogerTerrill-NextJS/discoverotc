@@ -1,4 +1,4 @@
-import { createSupabaseBrowserClient } from '@/lib/supabaseClient';
+import { createSupabaseServerClient } from '@/lib/supabaseServer';
 import AffiliateCard from '@/components/AffiliateCard';
 
 export type AffiliateProduct = {
@@ -19,7 +19,7 @@ const SECTION_LABELS: Record<string, string> = {
 };
 
 export default async function AffiliatesPage() {
-  const supabase = createSupabaseBrowserClient();
+  const supabase = await createSupabaseServerClient();
 
   const { data: products, error } = await supabase
     .from('affiliate_products')
