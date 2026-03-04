@@ -13,6 +13,7 @@ export type AffiliateProduct = {
 };
 
 const AffiliateCard = ({ item }: { item: AffiliateProduct }) => {
+  console.log(item.title);
   return (
     <div className='border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow transition bg-white'>
       {/* Image */}
