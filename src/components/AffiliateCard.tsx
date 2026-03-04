@@ -38,7 +38,9 @@ const AffiliateCard = ({ item }: { item: AffiliateProduct }) => {
           </h3>
         </a>
 
-        <p className='text-sm text-slate-600 mt-1'>{item.description}</p>
+        <p className='text-sm text-slate-600 mt-1 whitespace-pre-line'>
+          {item.description}
+        </p>
       </div>
     </div>
   );

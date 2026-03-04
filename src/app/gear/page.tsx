@@ -26,7 +26,7 @@ export default async function AffiliatesPage() {
     .select('*')
     .eq('active', true)
     .order('section')
-    .order('sort_order');
+    .order('title');
 
   if (error || !products) {
     console.error('Error loading products:', error);
