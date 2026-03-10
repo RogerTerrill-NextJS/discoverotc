@@ -89,6 +89,7 @@ export default async function AirportDetails({
             airport={airportWithRelations}
           />
           <InfoSection title='Campground' airport={airportWithRelations} />
+          <InfoSection title='Planespotting' airport={airportWithRelations} />
           <InfoSection title='Museum' airport={airportWithRelations} />
           <InfoSection title='Additional Info' airport={airportWithRelations} />
         </div>

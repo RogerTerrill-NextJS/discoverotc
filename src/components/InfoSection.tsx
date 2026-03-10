@@ -32,8 +32,6 @@ function linkify(text: string) {
 
 export default function InfoSection({ title, airport }: InfoSectionProps) {
   const type = toSnakeCase(title) as DescriptionType;
-  console.log(airport);
-  console.log(type);
 
   if (!airport?.[type]) return null;
 
