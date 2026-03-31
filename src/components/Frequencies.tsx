@@ -11,7 +11,7 @@ const Frequencies = ({ airport }: { airport: Airport }) => {
         {airport.frequencies.map((freq, idx) => (
           <li key={idx} className='flex items-center justify-between group'>
             <span className='text-sm font-medium text-slate-500 group-hover:text-blue-600 transition-colors'>
-              {freq.type}
+              {freq.type.toUpperCase()}
             </span>
             <span className='font-mono text-lg font-bold text-slate-800'>
               {freq.frequency}
