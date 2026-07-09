@@ -31,23 +31,23 @@ function About() {
 
       <div>
         <p className='mb-4 text-sm font-bold uppercase tracking-widest text-blue-600'>
-          Meet Roger & Irene
+          Our Philosophy
         </p>
 
         <h2 className='text-4xl font-bold leading-tight md:text-5xl'>
-          Hi, we’re Roger & Irene.
+          We don&#39;t just visit places, we experience them.
         </h2>
 
         <p className='mt-6 text-lg leading-relaxed text-slate-700'>
-          We’re passionate about showing that some of America’s most
-          unforgettable destinations aren’t reached by airline — they’re
-          discovered through general aviation.
+          Outside the Cockpit is a husband and wife team creating content that
+          inspires pilots and travelers to explore incredible destinations. We
+          believe in slow travel, hidden gems, local flavor and stories that go
+          beyond the runway.
         </p>
 
         <p className='mt-4 text-lg leading-relaxed text-slate-700'>
-          Every week we fly our Piper Arrow, Hannah, to explore hidden towns,
-          incredible restaurants, aviation history, scenic coastlines, and
-          unique experiences that inspire people to travel differently.
+          Our audience trusts our recommendations because we only share the
+          places and products we genuinely love.
         </p>
       </div>
     </section>
@@ -196,13 +196,6 @@ function WorkWithUs() {
 
           <div className='mt-8 flex flex-wrap gap-4'>
             <a
-              href='/media-kit.pdf'
-              className='rounded-md bg-white px-6 py-4 text-sm font-bold uppercase tracking-wide text-blue-700 hover:bg-blue-50'
-            >
-              Download Media Kit
-            </a>
-
-            <a
               href='mailto:gofly@discoverotc.com'
               className='rounded-md border border-white/70 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white hover:bg-white hover:text-blue-700'
             >
@@ -235,17 +228,17 @@ function Socials() {
         <SocialLink
           title='YouTube'
           subtitle='New videos every Friday'
-          href='https://youtube.com'
+          href='https://www.youtube.com/@outsidethecockpit'
         />
         <SocialLink
           title='Instagram'
-          subtitle='Behind the scenes & stories'
-          href='https://instagram.com'
+          subtitle='Updates, community & more'
+          href='https://www.instagram.com/outsidethecockpit/'
         />
         <SocialLink
           title='Patreon'
-          subtitle='Updates, community & more'
-          href='https://facebook.com'
+          subtitle='Behind the scenes & more'
+          href='https://www.patreon.com/c/OutsideTheCockpit'
         />
       </div>
     </section>
@@ -284,7 +277,17 @@ function Footer() {
             width={64}
             height={64}
           />
-          <p className='text-sm text-white/70'></p>
+
+          <div>
+            <p className='font-semibold'>Outside the Cockpit</p>
+
+            <a
+              href='mailto:gofly@discoverotc.com?subject=Partnership Inquiry'
+              className='text-sm text-white/70 transition-colors hover:text-white'
+            >
+              gofly@discoverotc.com
+            </a>
+          </div>
         </div>
 
         <div className='text-sm text-white/60'>
