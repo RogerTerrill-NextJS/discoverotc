@@ -185,7 +185,8 @@ function WorkWithUs() {
 
           <div className='mt-6 space-y-2'>
             <p className='text-lg leading-relaxed text-blue-50'>
-              If you think we&#39;d be a great fit, we&#39;d love to hear from you.
+              If you think we&#39;d be a great fit, we&#39;d love to hear from
+              you.
             </p>
 
             <p className='text-lg leading-relaxed text-blue-100'>
