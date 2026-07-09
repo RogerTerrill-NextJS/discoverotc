@@ -12,7 +12,7 @@ export default function Hero() {
         className='object-cover'
       />
 
-      <div className='absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20' />
+      <div className='absolute inset-0 bg-linear-to-r from-black/75 via-black/45 to-black/20' />
 
       <header className='absolute top-0 z-20 flex w-full items-center justify-between px-6 py-6 md:px-12'>
         <Image

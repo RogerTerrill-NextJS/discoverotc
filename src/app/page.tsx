@@ -20,7 +20,7 @@ export default function HomePage() {
 function About() {
   return (
     <section className='mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center'>
-      <div className='relative aspect-[4/3] overflow-hidden rounded-xl shadow-xl'>
+      <div className='relative aspect-4/3 overflow-hidden rounded-xl shadow-xl'>
         <Image
           src='https://cdn.discoverotc.com/images/WhoAreWe.jpg'
           alt='Roger and Irene with Hannah'
@@ -210,7 +210,7 @@ function WorkWithUs() {
           </div>
         </div>
 
-        <div className='relative aspect-[4/3] overflow-hidden rounded-xl shadow-2xl'>
+        <div className='relative aspect-4/3 overflow-hidden rounded-xl shadow-2xl'>
           <Image
             src='https://cdn.discoverotc.com/images/SunsetHannah4.jpg'
             alt='Outside the Cockpit airplane at sunset'
