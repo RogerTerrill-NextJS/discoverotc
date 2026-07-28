@@ -159,7 +159,7 @@ function LatestVideo() {
         </p>
 
         <a
-          href='https://youtube.com'
+          href='https://www.youtube.com/watch?v=OsXaoUHg6v4'
           target='_blank'
           className='mt-8 inline-block rounded-md bg-blue-600 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white hover:bg-blue-700'
         >
