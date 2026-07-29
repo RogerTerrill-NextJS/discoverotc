@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import './globals.css';
 import Hero from '@/components/Hero';
+import AirportSearch from '@/components/AirportSearch';
 
 export default function HomePage() {
   return (
@@ -10,6 +11,7 @@ export default function HomePage() {
       <About />
       <FeaturedDestinations />
       <LatestVideo />
+      <AirportSearch />
       <WorkWithUs />
       <Socials />
       <Footer />
