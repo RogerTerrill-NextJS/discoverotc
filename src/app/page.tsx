@@ -226,7 +226,7 @@ function Socials() {
         Follow the Adventure
       </p>
 
-      <div className='mx-auto mt-10 grid max-w-4xl gap-8 md:grid-cols-3'>
+      <div className='mx-auto mt-10 grid max-w-6xl gap-8 md:grid-cols-4'>
         <SocialLink
           title='YouTube'
           subtitle='New videos every Friday'
@@ -241,6 +241,11 @@ function Socials() {
           title='Patreon'
           subtitle='Behind the scenes & more'
           href='https://www.patreon.com/c/OutsideTheCockpit'
+        />
+        <SocialLink
+          title='Merch'
+          subtitle='Go Fly, Go Discover'
+          href='https://w503x1-14.myshopify.com/'
         />
       </div>
     </section>
