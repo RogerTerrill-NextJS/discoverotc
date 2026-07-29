@@ -148,7 +148,7 @@ export default function AirportSearch() {
             <div className='mt-5 flex flex-wrap justify-center gap-2 text-sm'>
               <span className='text-slate-500'>Popular searches:</span>
 
-              {['KPHX', 'San Jose', 'Harris Ranch'].map((suggestion) => (
+              {['KAVX', 'Santa Ynez', 'Harris Ranch'].map((suggestion) => (
                 <button
                   key={suggestion}
                   type='button'
