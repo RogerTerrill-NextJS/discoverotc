@@ -7,6 +7,7 @@ import About from '@/components/About';
 import FeaturedDestinations from '@/components/FeaturedDestination';
 import LatestVideo from '@/components/LatestVideo';
 import WorkWithUs from '@/components/WorkWithUs';
+import Socials from '@/components/Socials';
 
 export default function HomePage() {
   return (
@@ -20,60 +21,6 @@ export default function HomePage() {
       <Socials />
       <Footer />
     </main>
-  );
-}
-
-function Socials() {
-  return (
-    <section className='px-6 py-20 text-center'>
-      <p className='text-sm font-bold uppercase tracking-widest text-blue-600'>
-        Follow the Adventure
-      </p>
-
-      <div className='mx-auto mt-10 grid max-w-6xl gap-8 md:grid-cols-4'>
-        <SocialLink
-          title='YouTube'
-          subtitle='New videos every Friday'
-          href='https://www.youtube.com/@outsidethecockpit'
-        />
-        <SocialLink
-          title='Instagram'
-          subtitle='Updates, community & more'
-          href='https://www.instagram.com/outsidethecockpit/'
-        />
-        <SocialLink
-          title='Patreon'
-          subtitle='Behind the scenes & more'
-          href='https://www.patreon.com/c/OutsideTheCockpit'
-        />
-        <SocialLink
-          title='Merch'
-          subtitle='Go Fly, Go Discover'
-          href='https://w503x1-14.myshopify.com/'
-        />
-      </div>
-    </section>
-  );
-}
-
-function SocialLink({
-  title,
-  subtitle,
-  href,
-}: {
-  title: string;
-  subtitle: string;
-  href: string;
-}) {
-  return (
-    <a
-      href={href}
-      target='_blank'
-      className='rounded-xl border border-slate-200 p-8 transition hover:border-blue-600 hover:shadow-lg'
-    >
-      <h3 className='text-xl font-bold text-blue-600'>{title}</h3>
-      <p className='mt-2 text-sm text-slate-600'>{subtitle}</p>
-    </a>
   );
 }
 
