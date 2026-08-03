@@ -46,7 +46,7 @@ export default function AirportSearch() {
     : [];
 
   return (
-    <section className='px-6 py-24'>
+    <section id='find-adventure' className='px-6 py-24'>
       <div className='mx-auto max-w-6xl'>
         <div className='mx-auto max-w-3xl text-center'>
           <p className='text-sm font-bold uppercase tracking-widest text-blue-600'>

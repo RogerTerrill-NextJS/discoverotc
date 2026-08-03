@@ -65,10 +65,10 @@ export default function Hero() {
             </a>
 
             <a
-              href='#work-with-us'
+              href='#find-adventure'
               className='rounded-md border border-white/70 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-white hover:text-slate-950'
             >
-              Work With Us
+              Find Your Adventure
             </a>
           </div>
 
