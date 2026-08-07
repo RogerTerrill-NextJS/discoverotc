@@ -115,7 +115,7 @@ export default function AirportSearch() {
                             <span className='mx-2 text-slate-300'>•</span>
                             {airport.icao}
                             <span className='mx-2 text-slate-300'>•</span>
-                            {airport.city}
+                            {airport.city}, {airport.state}
                           </p>
                         </div>
 
