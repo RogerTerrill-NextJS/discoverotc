@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { createSupabaseReadonlyClient } from '@/lib/supabaseReadOnly';
+import {
+  trackAirportSearch,
+  trackAirportSelection,
+} from '@/components/Analytics';
 
 type AirportVideo = {
   name: string;
@@ -44,6 +48,20 @@ export default function AirportSearch() {
         ),
       )
     : [];
+
+  /*
+   * Track the search after the visitor stops typing
+   * for one second.
+   */
+  useEffect(() => {
+    if (normalizedQuery.length < 2) return;
+
+    const timeout = setTimeout(() => {
+      trackAirportSearch(query.trim(), results.length);
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, [normalizedQuery, query, results.length]);
 
   return (
     <section id='find-adventure' className='px-6 py-24'>
@@ -107,6 +125,13 @@ export default function AirportSearch() {
                         href={`https://youtu.be/${airport.youtube_video_id}`}
                         target='_blank'
                         rel='noopener noreferrer'
+                        onClick={() =>
+                          trackAirportSelection({
+                            searchTerm: query.trim(),
+                            airportName: airport.name,
+                            icao: airport.icao,
+                          })
+                        }
                         className='group flex items-center justify-between gap-6 px-6 py-5 transition hover:bg-slate-50'
                       >
                         <div className='min-w-0'>

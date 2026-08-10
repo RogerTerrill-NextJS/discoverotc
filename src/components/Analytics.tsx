@@ -16,3 +16,30 @@ export default function Analytics() {
 
   return null;
 }
+
+export function trackAirportSearch(searchTerm: string, resultCount: number) {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'search', {
+    search_term: searchTerm,
+    result_count: resultCount,
+  });
+}
+
+export function trackAirportSelection({
+  searchTerm,
+  airportName,
+  icao,
+}: {
+  searchTerm: string;
+  airportName: string;
+  icao: string;
+}) {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'select_airport', {
+    search_term: searchTerm,
+    airport_name: airportName,
+    airport_icao: icao,
+  });
+}
