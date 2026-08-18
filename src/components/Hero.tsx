@@ -38,8 +38,8 @@ export default function Hero() {
           <a href='https://www.patreon.com/c/OutsideTheCockpit' target='_blank'>
             Patreon
           </a>
-          <a href='https://w503x1-14.myshopify.com/' target='_blank'>
-            Merch
+          <a href='https://shop.discoverotc.com/' target='_blank'>
+            Store
           </a>
         </nav>
       </header>
