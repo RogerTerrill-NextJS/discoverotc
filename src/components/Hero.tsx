@@ -16,7 +16,7 @@ export default function Hero() {
 
       <header className='absolute top-0 z-20 flex w-full items-center justify-between px-6 py-6 md:px-12'>
         <Image
-          src='https://cdn.discoverotc.com/images/NewLogo.png'
+          src='https://cdn.discoverotc.com/images/OTCLogoWhite.svg'
           alt='Outside the Cockpit'
           width={110}
           height={110}
@@ -71,10 +71,6 @@ export default function Hero() {
               Find Your Adventure
             </a>
           </div>
-
-          <p className='mt-10 text-sm font-semibold text-white/80'>
-            ✈ New adventures every Friday.
-          </p>
         </div>
       </div>
     </section>

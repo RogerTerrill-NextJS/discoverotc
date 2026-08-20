@@ -6,7 +6,7 @@ export default function Footer() {
       <div className='mx-auto flex max-w-6xl flex-col gap-6 md:flex-row md:items-center md:justify-between'>
         <div className='flex items-center gap-4'>
           <Image
-            src='https://cdn.discoverotc.com/images/NewLogo.png'
+            src='https://cdn.discoverotc.com/images/OTCLogoWhite.svg'
             alt='Outside the Cockpit'
             width={64}
             height={64}
