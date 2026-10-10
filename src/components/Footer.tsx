@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -23,6 +24,8 @@ export default function Footer() {
             </a>
           </div>
         </div>
+
+        <Link href='/patch-wall' className='rounded-md text-sm font-semibold text-white/80 hover:text-white'>The Patch Wall</Link>
 
         <div className='text-sm text-white/60'>
           © {new Date().getFullYear()} Outside The Cockpit. All rights reserved.
