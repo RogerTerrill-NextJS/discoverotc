@@ -26,7 +26,7 @@ export default function Socials() {
         <SocialLink
           title='Merch'
           subtitle='Go Fly, Go Discover'
-          href='https://w503x1-14.myshopify.com/'
+          href='https://www.shop.discoverotc.com'
         />
       </div>
     </section>
