@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import MobileNavigation from '@/components/MobileNavigation';
 
 export default function Hero() {
   return (
-    <section className='relative min-h-screen overflow-hidden'>
+    <section id='home' className='relative min-h-screen overflow-hidden'>
       <Image
         src='https://cdn.discoverotc.com/images/HeroImage_02.png'
         alt='Outside the Cockpit airplane adventure'
@@ -23,9 +24,10 @@ export default function Hero() {
           className='h-20 w-20 md:h-28 md:w-28'
         />
 
-        <nav className='hidden items-center gap-8 text-sm font-semibold text-white md:flex'>
-          <Link href='#home'>Home</Link>
-          <Link href='#work-with-us'>Work With Us</Link>
+        <nav className='hidden items-center gap-3 text-xs font-semibold text-white md:flex lg:gap-8 lg:text-sm'>
+          <Link href='/#home'>Home</Link>
+          <Link href='/patch-wall'>The Patch Wall</Link>
+          <Link href='/#work-with-us'>Work With Us</Link>
           <a href='https://www.youtube.com/@outsidethecockpit' target='_blank'>
             YouTube
           </a>
@@ -42,6 +44,7 @@ export default function Hero() {
             Store
           </a>
         </nav>
+        <MobileNavigation />
       </header>
 
       <div className='relative z-10 flex min-h-screen items-center px-6 md:px-12'>
@@ -64,12 +67,12 @@ export default function Hero() {
               Watch on YouTube
             </a>
 
-            <a
-              href='#find-adventure'
+            <Link
+              href='/#find-adventure'
               className='rounded-md border border-white/70 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-white hover:text-slate-950'
             >
               Find Your Adventure
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
+import MobileNavigation from '@/components/MobileNavigation';
 import PatchGrid from '@/components/patch-wall/PatchGrid';
 import { getAssetUrl } from '@/lib/assets';
 import { getViewerPatches } from '@/lib/viewerPatches';
@@ -17,11 +18,12 @@ export default async function PatchWallPage() {
   const { patches, failed } = await getViewerPatches();
   return (
     <div className='min-h-screen bg-white text-slate-950'>
-      <header className='bg-slate-950 px-6 py-5 text-white'>
-        <nav aria-label='Patch Wall navigation' className='mx-auto flex max-w-6xl items-center justify-between gap-6'>
+      <header className='relative z-20 bg-slate-950 px-6 py-5 text-white'>
+        <div className='mx-auto flex max-w-6xl items-center justify-between gap-6'>
           <Link href='/' aria-label='Outside the Cockpit home'><Image src={getAssetUrl('images/OTCLogoWhite.svg')} alt='Outside the Cockpit' width={64} height={64} /></Link>
-          <Link href='/' className='rounded-md text-sm font-semibold text-white/90 hover:text-white'>← Back to Home</Link>
-        </nav>
+          <Link href='/' className='hidden rounded-md text-sm font-semibold text-white/90 hover:text-white md:flex'>← Back to Home</Link>
+          <MobileNavigation />
+        </div>
       </header>
       <main>
         <section className='bg-slate-50 px-6 py-16 md:py-24'>

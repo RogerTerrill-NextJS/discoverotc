@@ -7,6 +7,10 @@ import LatestVideo from '@/components/LatestVideo';
 import WorkWithUs from '@/components/WorkWithUs';
 import Socials from '@/components/Socials';
 import Footer from '@/components/Footer';
+import PatchWallPreview from '@/components/PatchWallPreview';
+import { Suspense } from 'react';
+
+export const dynamic = 'force-dynamic';
 
 export default function HomePage() {
   return (
@@ -15,6 +19,9 @@ export default function HomePage() {
       <About />
       <FeaturedDestinations />
       <LatestVideo />
+      <Suspense fallback={null}>
+        <PatchWallPreview />
+      </Suspense>
       <AirportSearch />
       <WorkWithUs />
       <Socials />
