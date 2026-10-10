@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { getAssetUrl } from '@/lib/assets';
 import type { ViewerPatch } from '@/types/viewerPatch';
@@ -80,23 +81,61 @@ function episodeUrl(value: string | null): string | null {
   }
 }
 
+function CopyPatchLink() {
+  const [message, setMessage] = useState('');
+
+  async function copyLink() {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setMessage('Link copied');
+    } catch {
+      setMessage('Copy the link from your address bar.');
+    }
+  }
+
+  return (
+    <div className='flex flex-wrap items-center gap-3'>
+      <button type='button' onClick={copyLink} className='rounded-md px-3 py-2 text-sm font-semibold text-blue-700 hover:bg-slate-100'>Copy Link</button>
+      <span role='status' className='text-xs text-slate-600'>{message}</span>
+    </div>
+  );
+}
+
 export default function PatchGrid({ patches }: { patches: ViewerPatch[] }) {
-  const [selected, setSelected] = useState<ViewerPatch | null>(null);
+  const searchParams = useSearchParams();
+  const selected = patches.find((patch) => patch.slug === searchParams.get('patch')) ?? null;
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLButtonElement | null>(null);
 
+  function updatePatchUrl(slug: string | null) {
+    const url = new URL(window.location.href);
+    if (slug) {
+      url.searchParams.set('patch', slug);
+      window.history.pushState(null, '', url);
+    } else {
+      url.searchParams.delete('patch');
+      window.history.replaceState(null, '', url);
+    }
+  }
+
   useEffect(() => {
-    if (!selected || !dialog.current) return;
+    if (!dialog.current) return;
     const element = dialog.current;
+    if (!selected) {
+      if (element.open) {
+        element.close();
+        opener.current?.focus();
+      }
+      return;
+    }
+    opener.current ??= document.getElementById(`patch-${selected.id}`) as HTMLButtonElement | null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    element.showModal();
+    if (!element.open) element.showModal();
     element.scrollTop = 0;
-    element.querySelector<HTMLButtonElement>('button')?.focus();
+    element.querySelector<HTMLButtonElement>('[aria-label="Close patch details"]')?.focus();
     return () => {
-      element.close();
       document.body.style.overflow = previousOverflow;
-      opener.current?.focus();
     };
   }, [selected]);
 
@@ -108,10 +147,11 @@ export default function PatchGrid({ patches }: { patches: ViewerPatch[] }) {
         {patches.map((patch) => (
           <button
             key={patch.id}
+            id={`patch-${patch.id}`}
             type='button'
             aria-haspopup='dialog'
             aria-label={`View story for ${patch.name}`}
-            onClick={(event) => { opener.current = event.currentTarget; setSelected(patch); }}
+            onClick={(event) => { opener.current = event.currentTarget; updatePatchUrl(patch.slug); }}
             className='group min-w-0 rounded-xl text-left'
           >
             <div className='relative aspect-square rounded-xl bg-slate-100 motion-safe:transition motion-safe:duration-300 motion-safe:group-hover:-translate-y-1 group-hover:bg-slate-200/70'>
@@ -129,8 +169,7 @@ export default function PatchGrid({ patches }: { patches: ViewerPatch[] }) {
       <dialog
         ref={dialog}
         aria-labelledby='patch-detail-title'
-        onCancel={() => setSelected(null)}
-        onClose={() => setSelected(null)}
+        onCancel={(event) => { event.preventDefault(); updatePatchUrl(null); }}
         onKeyDown={(event) => {
           if (event.key !== 'Tab') return;
           const controls = event.currentTarget.querySelectorAll<HTMLElement>('button, a[href]');
@@ -148,8 +187,9 @@ export default function PatchGrid({ patches }: { patches: ViewerPatch[] }) {
       >
         {selected && (
           <>
-            <div className='sticky top-0 z-10 flex justify-end border-b border-slate-100 bg-white px-5 py-3'>
-              <button type='button' onClick={() => dialog.current?.close()} className='rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100' aria-label='Close patch details'>Close <span aria-hidden='true'>×</span></button>
+            <div className='sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-slate-100 bg-white px-5 py-3'>
+              <CopyPatchLink key={selected.slug} />
+              <button type='button' onClick={() => updatePatchUrl(null)} className='rounded-md px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100' aria-label='Close patch details'>Close <span aria-hidden='true'>×</span></button>
             </div>
             <div className='grid gap-8 p-6 md:grid-cols-2 md:p-8'>
               <PatchDetailImages key={selected.id} patch={selected} />

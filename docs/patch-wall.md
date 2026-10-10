@@ -77,6 +77,15 @@ in `next.config.ts`; patch rows do not change.
 
 ## Editing a patch
 
+### Sharing a piece
+
+Clicking a piece updates the address bar to `/patch-wall?patch=<slug>` and opens
+its details. The Copy Link button copies that URL. Opening or refreshing a shared
+link opens the matching active piece automatically. Browser Back closes the dialog
+and Forward reopens it; closing the dialog removes the patch query parameter.
+Unknown or inactive slugs show the wall without a dialog. Keep slugs stable after
+sharing links. No database changes are needed.
+
 ### Two-sided challenge coins
 
 Run `supabase/migrations/20261009000000_add_patch_reverse_image.sql` in Supabase
