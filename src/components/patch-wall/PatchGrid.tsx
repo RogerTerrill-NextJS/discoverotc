@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { getAssetUrl } from '@/lib/assets';
+import { trackPatchSelection } from '@/components/Analytics';
 import type { ViewerPatch } from '@/types/viewerPatch';
 
 function PatchImage({ patch, large = false, reverse = false, zoomed = false }: { patch: ViewerPatch; large?: boolean; reverse?: boolean; zoomed?: boolean }) {
@@ -151,7 +152,11 @@ export default function PatchGrid({ patches }: { patches: ViewerPatch[] }) {
             type='button'
             aria-haspopup='dialog'
             aria-label={`View story for ${patch.name}`}
-            onClick={(event) => { opener.current = event.currentTarget; updatePatchUrl(patch.slug); }}
+            onClick={(event) => {
+              opener.current = event.currentTarget;
+              updatePatchUrl(patch.slug);
+              trackPatchSelection(patch);
+            }}
             className='group min-w-0 rounded-xl text-left'
           >
             <div className='relative aspect-square rounded-xl bg-slate-100 motion-safe:transition motion-safe:duration-300 motion-safe:group-hover:-translate-y-1 group-hover:bg-slate-200/70'>

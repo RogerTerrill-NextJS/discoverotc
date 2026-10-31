@@ -1,6 +1,7 @@
 'use client';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import type { ViewerPatch } from '@/types/viewerPatch';
 
 export default function Analytics() {
   const pathname = usePathname();
@@ -23,6 +24,16 @@ export function trackAirportSearch(searchTerm: string, resultCount: number) {
   window.gtag('event', 'search', {
     search_term: searchTerm,
     result_count: resultCount,
+  });
+}
+
+export function trackPatchSelection(patch: Pick<ViewerPatch, 'id' | 'name' | 'slug'>) {
+  if (typeof window === 'undefined' || !window.gtag) return;
+
+  window.gtag('event', 'select_patch', {
+    patch_id: patch.id,
+    patch_name: patch.name,
+    patch_slug: patch.slug,
   });
 }
 
