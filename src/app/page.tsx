@@ -8,6 +8,7 @@ import WorkWithUs from '@/components/WorkWithUs';
 import Socials from '@/components/Socials';
 import Footer from '@/components/Footer';
 import PatchWallPreview from '@/components/PatchWallPreview';
+import { NewsletterSignup } from '@/components/Newsletter';
 import { Suspense } from 'react';
 
 export const dynamic = 'force-dynamic';
@@ -24,6 +25,7 @@ export default function HomePage() {
       </Suspense>
       <AirportSearch />
       <WorkWithUs />
+      <NewsletterSignup />
       <Socials />
       <Footer />
     </main>

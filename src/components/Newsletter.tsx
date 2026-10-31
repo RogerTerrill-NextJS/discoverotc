@@ -1,154 +1,125 @@
 'use client';
-import React, { useState } from 'react';
 
-export const NewsletterSignup: React.FC = () => {
+import { useState, type FormEvent } from 'react';
+
+export function NewsletterSignup() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>(
-    'idle',
-  );
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!email) return;
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!email.trim() || status === 'submitting') return;
 
     setStatus('submitting');
 
     try {
-      const res = await fetch('/.netlify/functions/newsletter', {
+      const response = await fetch('/.netlify/functions/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: email.trim() }),
       });
 
-      if (!res.ok) throw new Error('Failed to subscribe');
+      if (!response.ok) {
+        setStatus('error');
+        return;
+      }
 
       setStatus('success');
       setEmail('');
-    } catch (error) {
-      console.error(error);
-      setStatus('idle');
+    } catch {
+      setStatus('error');
     }
-  };
+  }
 
   return (
-    <div className='bg-slate-900 py-16 border-t border-slate-800'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
-        <div className='max-w-2xl mx-auto'>
-          <h2 className='text-2xl font-bold tracking-tight text-white sm:text-3xl mb-4'>
-            Join the Outside The Cockpit Community
-          </h2>
-          <p className='text-lg text-slate-300 mb-8'>
-            Get monthly updates on airport conditions, new charts, and general
-            aviation news delivered straight to your inbox.
+    <section
+      id='newsletter'
+      aria-labelledby='newsletter-title'
+      className='border-b border-slate-200 bg-slate-50 px-6 py-16 text-slate-950 md:py-24'
+    >
+      <div className='mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2 md:gap-12'>
+        <div>
+          <p className='text-sm font-bold uppercase tracking-widest text-blue-600'>
+            Stay in the Loop
           </p>
+          <h2 id='newsletter-title' className='mt-3 text-4xl font-bold leading-tight md:text-5xl'>
+            The Adventure Doesn&apos;t End Here!
+          </h2>
+          <p className='mt-5 max-w-xl text-lg leading-relaxed text-slate-700'>
+            Join the Outside the Cockpit newsletter and stay connected with our
+            latest adventures, upcoming destinations, and everything happening
+            behind the scenes.
+          </p>
+          <p className='mt-5 max-w-xl text-lg leading-relaxed text-slate-700'>
+            Be the first to hear about <strong>new merchandise drops, exclusive
+            discount codes, upcoming trips, and special announcements.</strong>{' '}
+            Plus, we&apos;ll share occasional updates and discoveries that don&apos;t
+            always make it into our videos.
+          </p>
+          <p className='mt-5 max-w-xl text-lg leading-relaxed text-slate-700'>
+            <strong>No spam. Just aviation, adventure, and a little something extra
+            from us to you.</strong>
+          </p>
+        </div>
 
+        <div className='min-w-0 rounded-xl border border-slate-200 bg-white p-6 md:p-8'>
           {status === 'success' ? (
-            <div className='bg-green-500/10 border border-green-500/20 rounded-xl p-6 animate-in fade-in zoom-in-95 duration-300'>
-              <div className='flex flex-col items-center justify-center'>
-                <div className='bg-green-500 rounded-full p-2 mb-3 shadow-lg shadow-green-500/20'>
-                  <svg
-                    className='w-6 h-6 text-white'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M5 13l4 4L19 7'
-                    />
-                  </svg>
-                </div>
-                <h3 className='text-xl font-semibold text-white'>
-                  Thanks for subscribing!
-                </h3>
-                <p className='text-green-200 mt-2'>
-                  Check your inbox for a welcome message.
-                </p>
-                <button
-                  onClick={() => setStatus('idle')}
-                  className='mt-4 text-sm text-slate-400 hover:text-white underline decoration-slate-600 underline-offset-4'
-                >
-                  Subscribe another email
-                </button>
-              </div>
+            <div role='status' aria-live='polite'>
+              <p className='text-sm font-bold uppercase tracking-widest text-blue-600'>
+                You’re on the List
+              </p>
+              <h3 className='mt-3 text-2xl font-bold'>Thanks for joining us.</h3>
+              <p className='mt-3 leading-relaxed text-slate-600'>
+                You’re signed up for the Outside the Cockpit newsletter. We’re glad
+                to have you along for the adventure.
+              </p>
+              <button
+                type='button'
+                onClick={() => setStatus('idle')}
+                className='mt-6 rounded-md text-sm font-semibold text-blue-700 underline underline-offset-4 hover:text-blue-800'
+              >
+                Subscribe another email
+              </button>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              className='flex flex-col sm:flex-row gap-3'
-            >
-              <div className='grow relative'>
-                <div className='absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none'>
-                  <svg
-                    className='h-5 w-5 text-slate-400'
-                    fill='none'
-                    stroke='currentColor'
-                    viewBox='0 0 24 24'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth={2}
-                      d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-                    />
-                  </svg>
-                </div>
-                <input
-                  type='email'
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder='Enter your email address'
-                  disabled={status === 'submitting'}
-                  className='w-full pl-10 pr-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all hover:bg-white/10 disabled:opacity-50 disabled:cursor-not-allowed'
-                />
-              </div>
+            <form onSubmit={handleSubmit} aria-busy={status === 'submitting'}>
+              <label htmlFor='newsletter-email' className='block text-sm font-semibold text-slate-950'>
+                Email address
+              </label>
+              <input
+                id='newsletter-email'
+                name='email'
+                type='email'
+                autoComplete='email'
+                required
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder='you@example.com'
+                disabled={status === 'submitting'}
+                aria-describedby={status === 'error' ? 'newsletter-note newsletter-error' : 'newsletter-note'}
+                className='mt-2 w-full rounded-md border border-slate-300 bg-white px-4 py-4 text-base text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-600/10 disabled:cursor-wait disabled:opacity-60'
+              />
               <button
                 type='submit'
                 disabled={status === 'submitting'}
-                className='sm:shrink-0 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold shadow-lg shadow-blue-900/30 transition-all hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-blue-500 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none min-w-35 flex items-center justify-center'
+                className='mt-4 inline-flex w-full items-center justify-center gap-3 rounded-md bg-blue-600 px-6 py-4 text-sm font-bold uppercase tracking-wide text-white transition hover:bg-blue-700 disabled:cursor-wait disabled:opacity-70'
               >
-                {status === 'submitting' ? (
-                  <svg
-                    className='animate-spin h-5 w-5 text-white'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                  >
-                    <circle
-                      className='opacity-25'
-                      cx='12'
-                      cy='12'
-                      r='10'
-                      stroke='currentColor'
-                      strokeWidth='4'
-                    ></circle>
-                    <path
-                      className='opacity-75'
-                      fill='currentColor'
-                      d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                    ></path>
-                  </svg>
-                ) : (
-                  'Subscribe'
-                )}
+                {status === 'submitting' ? 'Subscribing…' : 'Join the Adventure'}
+                {status !== 'submitting' && <span aria-hidden='true'>→</span>}
               </button>
+              {status === 'error' && (
+                <p id='newsletter-error' role='alert' className='mt-4 text-sm leading-relaxed text-red-700'>
+                  We couldn’t complete your signup. Please try again in a moment.
+                </p>
+              )}
+              <p id='newsletter-note' className='mt-4 text-sm leading-relaxed text-slate-500'>
+                By subscribing, you agree to receive the Outside the Cockpit
+                newsletter. You can unsubscribe at any time.
+              </p>
             </form>
           )}
-          <p className='mt-4 text-sm text-slate-500'>
-            We care about your data. Read our{' '}
-            <a
-              href='/privacy'
-              className='text-slate-400 hover:text-white underline'
-            >
-              Privacy Policy
-            </a>
-            .
-          </p>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+}
